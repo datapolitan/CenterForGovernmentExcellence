@@ -37,6 +37,20 @@ img[alt=img-right-50]{
   width:50%;
   float:right;
 }
+img[alt=img-right-20]{
+  width:20%;
+  float:right;
+}
+img[alt=img-right-35]{
+  width:35%;
+  float:right;
+}
+img[alt=img-right-30-bottom]{
+  width:30%;
+  float:right;
+  bottom:10px;
+}
+
 img[alt=img-right-small]{
   width:40%;
   float:right;
@@ -56,6 +70,9 @@ img[alt=img-center]{
 }
 img[alt=img-center-small]{
   width:35%;
+}
+img[alt=img-center-25]{
+  width:25%;
 }
 img[alt=img-center-45]{
   width:45%;
