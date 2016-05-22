@@ -3,6 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 body { font-family: 'Droid Serif'; }
+a:visited, a:link, a:active { text-decoration: none; }
+a:hover { text-decoration: underline; }
 p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Yanone Kaffeesatz';
   font-weight: normal;
@@ -21,28 +23,61 @@ img {
 img[alt=img-full] {
   width:100%;
 }
-img[alt=img-left]{
-  width:45%;
+img[alt=img-left-10]{
+  width:10%;
+  float:left;
+}
+img[alt=img-left-15]{
+  width:15%;
+  float:left;
+}
+img[alt=img-left-20]{
+  width:20%;
+  float:left;
+}
+img[alt=img-left-30]{
+  width:30%;
+  float:left;
+}
+img[alt=img-left-35]{
+  width:35%;
   float:left;
 }
 img[alt=img-left-40]{
   width:40%;
   float:left;
 }
-img[alt=img-right]{
+img[alt=img-left-45]{
   width:45%;
-  float:right;
+  float:left;
 }
-img[alt=img-right-50]{
+img[alt=img-left-48]{
+  width:48%;
+  float:left;
+}
+img[alt=img-left-50]{
   width:50%;
-  float:right;
+  float:left;
+}
+img[alt=img-left-55]{
+  width:55%;
+  float:left;
+}
+img[alt=img-left-60]{
+  width:60%;
+  float:left;
+}
+img[alt=img-left-bottom]{
+  width:45%;
+  float:left;
+  bottom:10px;
 }
 img[alt=img-right-20]{
   width:20%;
   float:right;
 }
-img[alt=img-right-35]{
-  width:35%;
+img[alt=img-right-30]{
+  width:30%;
   float:right;
 }
 img[alt=img-right-30-bottom]{
@@ -50,43 +85,114 @@ img[alt=img-right-30-bottom]{
   float:right;
   bottom:10px;
 }
-
-img[alt=img-right-small]{
+img[alt=img-right-35]{
+  width:35%;
+  float:right;
+}
+img[alt=img-right-40]{
   width:40%;
   float:right;
 }
-img[alt=img-left-bottom]{
+img[alt=img-right-43]{
+  width:43%;
+  float:right;
+}
+img[alt=img-right-45]{
   width:45%;
-  float:left;
-  bottom:10px;
+  float:right;
+}
+img[alt=img-right-48]{
+  width:48%;
+  float:right;
+}
+img[alt=img-right-50]{
+  width:50%;
+  float:right;
+}
+img[alt=img-right-55]{
+  width:55%;
+  float:right;
+}
+img[alt=img-right-60]{
+  width:60%;
+  float:right;
+}
+img[alt=img-right-65]{
+  width:65%;
+  float:right;
+}
+img[alt=img-right-70]{
+  width:70%;
+  float:right;
 }
 img[alt=img-right-bottom]{
   width:45%;
   float:right;
   bottom:10px;
 }
-img[alt=img-center]{
-  width:60%;
+img[alt=img-top]{
+  width:50%;
+  top:10px;
 }
-img[alt=img-center-small]{
-  width:35%;
+img[alt=img-center-20]{
+  width:20%;
 }
 img[alt=img-center-25]{
   width:25%;
 }
+img[alt=img-center-30]{
+  width:30%;
+}
+img[alt=img-center-35]{
+  width:35%;
+}
+img[alt=img-center-38]{
+  width:38%;
+}
+img[alt=img-center-40]{
+  width:40%;
+}
 img[alt=img-center-45]{
   width:45%;
 }
-img[alt=img-center-medium]{
+img[alt=img-center-50]{
   width:50%;
 }
-img[alt=img-center-large]{
+img[alt=img-center-55]{
+  width:55%;
+}
+img[alt=img-center-60]{
+  width:60%;
+}
+img[alt=img-center-70]{
+  width:70%;
+}
+img[alt=img-center-75]{
+  width:75%;
+}
+img[alt=img-center-80]{
   width:80%;
+}
+img[alt=img-center-85]{
+  width:85%;
+}
+img[alt=img-center-90]{
+  width:90%;
+}
+img[alt=img-center-100]{
+  width:100%;
+  margin:0;
 }
 img[alt=Creative-Commons-License]{
   width:10%;
   float:right;
   display: inline;
+}
+
+iframe {
+  display:block;
+  margin: 0 auto;
+  vertical-align: left;
 }
 
 blockquote {

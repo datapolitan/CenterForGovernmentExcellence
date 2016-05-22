@@ -31,7 +31,11 @@ class:center,middle
 ---
 
 #Goals
-
++ Review descriptive statistics
++ Review how to calculate descriptive statistics in Excel
++ Review correlations and calculating coefficients of correlation in Excel
++ Review linear regression and calculating a line of best fit in Excel
++ Discuss supervised learning
 ---
 
 class:center,middle
@@ -413,28 +417,6 @@ class:center,middle
 
 ---
 
-class:center,middle
-#Enabling the Data Analysis Toolpak in Office 2011 for Mac
-#&nbsp;
-
----
-
-class:center,middle
-#Enabling the Data Analysis Toolpak in Office 2011 for Mac
-#...there isn't one
-
----
-
-class:center
-#Download [StatPlus:mac](https://www.analystsoft.com/en/products/statplusmac/download.phtml)
-![img-full](../images/statplus1.png)
-
---
-
-![img-full](../images/statplus2.png)
-
----
-
 #Descriptive Statistics in Excel 2013/2016
 ![img](../images/datp_summary1.png)
 
@@ -447,21 +429,6 @@ class:center
 
 #Descriptive Statistics in Excel 2013/2016
 ![img-center-small](../images/datp_summary3.png)
-
----
-
-#Descriptive Statistics in Excel 2011 for Mac
-![img](../images/statplus3.png)
-
----
-
-#Descriptive Statistics in Excel 2011 for Mac
-![img](../images/statplus4.png)
-
----
-
-#Descriptive Statistics in Excel 2011 for Mac
-![img](../images/statplus5.png)
 
 ---
 
@@ -518,40 +485,20 @@ class:center,middle
 ---
 
 #Coefficient of Correlation
+--
 
----
-
-#Coefficient of Correlation
 + Quantifies the amount of shared variability between variables
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
 + Ranges between -1 and +1 
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
 + Negative numbers are inversely proportional
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
-+ Negative numbers are inversely proportional
 + Positive numbers are directly proportional
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
-+ Negative numbers are inversely proportional
-+ Positive numbers are directly proportional
 + The closer to either -1 or +1, the greater the correlation
 
 ---
@@ -605,11 +552,6 @@ http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-
 #Correlations
 ![img-full](../images/corr5.png)
 ##Correlation does not imply causation
-
----
-
-class:center,middle
-#Why am I doing this with you?
 
 ---
 
@@ -748,6 +690,408 @@ class:center,middle
 ![img-center-100](../images/big-data-meme-star-trek.jpg)
 
 ---
+
+#Do this again with more data
++ How do the results change?
++ What does that tell you?
+
+---
+
+#How is Linear Regression Useful in Cities?
+--
+
++ Make predictions
+--
+
++ Identify outliers
+
+---
+
+#Multiple Linear Regression
+![img-center-60](../images/mlr.jpg)
+Source: http://gerardnico.com/wiki/data_mining/multiple_regression [CC Attribution-Noncommercial-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+---
+
+# Supervised Learning
+--
+
++ The target value (y) is known in advance
+--
+
++ We use the relationship between the features (x) and the target value for instances where y is known to create a predictor for instances where y isn’t known
+
+---
+
+#Supervised Learning
++ Decision trees
++ Support Vector Machines (SVMs)
++ Neural Networks
+
+---
+
+#10 Min Break
+
+---
+
+#Decision Modeling
+--
+
+##Government has constraints
+--
+
++ Money
+--
+
++ Time
+--
+
++ Resources
+--
+
++ Political Concerns
+
+--
+
+##Need ways to optimize around what’s available
+
+---
+
+#Decision Models
+--
+
++ _Decision modeling_ refers to the use of mathematical or scientific methods to determine an allocation of scarce resources that improves or optimizes the performance of a system
+--
+
++ The terms _operations research_ and _management science_ are also used to refer to decision modeling
+
+---
+
+#Decision Models
+![img-center-90](../images/dm1.png)
+
+---
+
+#Decision Models - Requirements
+--
+
++ You have to understand the real world process
+--
+
++ You have to be able to quantify the real world process
+--
+
++ You need to test your assumptions
+--
+
++ The decisions made based on the model will have an impact that need to be accounted for in the future
+
+---
+
+#Let's optimize around parking tickets
+
+---
+
+#Constraints
+--
+
++ Density of illegally parked vehicles varies by location
+--
+
++ Number of illegally parked vehicles varies by location
+--
+
++ Amount of fine varies by location
+--
+
++ Number of agents is limited
+--
+
++ Only so many tickets an agent can write in a day
+--
+
++ Only so many tickets are actually paid
+--
+
++ Some neighborhoods are more concerned about illegal parking than others
+--
+
++ Every borough must have at least one ticket agent
+
+---
+
+#Constraints
+![img-center-90](../images/dm2.png)
+
+--
+
+#Now what?
+
+---
+
+#Decision Modeling in Excel
+--
+
+##Given a set of constrains
+--
+
++ Excel will optimize for those constraints to achieve the desired outcome
+--
+
++ In this case, we're going to be maximizing the ticket revenue
+--
+
++ We give Excel the constraints and let it do the calculations
+--
+
++ We're going to do something similar later when we do clustering
+
+---
+
+#Now Let's Optimize
+![img-center-80](http://i.giphy.com/oadZJB3hwMFjy.gif)
+
+---
+
+#Setup Spreadsheet
+![img-center-100](../images/dm3.png)
+
+---
+
+#Sum Assigned Agents
+![img-center-100](../images/dm4.png)
+
+---
+
+#Add Total Number of Agents (1000)
+![img-center-100](../images/dm5.png)
+
+---
+
+#Sum Revenue
+![img-center-100](../images/dm6.png)
+
+---
+
+# Calculating Revenue
+--
+
++ The number of agents
+--
+
++ The number of tickets they can write
+--
+
++ The fines for illegal parking in the area they're working in
+--
+
++ The density of illegally parked cars in the area they're working in
+--
+
++ The percent of tickets that are paid for that area
+
+---
+
+#We can write that as a formula
++ `Revenue = # of Agents * 200 * Fine * Density of Illegally Parked Cars * % Collect `
+
+---
+
+#For example:
++ 100 agents working in Manhattan, writing at most 200 tickets a day
++ $90 parking fine
++ About 40% of the vehicles in Manhattan are parked illegally
++ NYC collects 75% of the fines issued
+
+##`Expected Revenue = 100 * 200 * 90 * 0.4 * 0.75 = $540,000`
+
+---
+
+#Add Revenue Function
+![img-center-100](../images/dm7.png)
+
+---
+
+#Ticketing Function
+--
+
++ The number of agents
+--
+
++ The number of tickets they can write in a day (200)
+--
+
++ The density of illegally parked cars
+--
+
+
+##`# Ticketed = # of Agents * 200 * Density of Illegally Parked Cars`
+
+---
+
+#Add Ticketing Function
+![img-center-100](../images/dm8.png)
+
+---
+
+#Spreadsheet Setup
+![img-center-100](../images/dm9.png)
+
+---
+
+#Now we're going to optimize for the number of agents
+![img-center-100](../images/dm10.png)
+
+---
+
+#Constraints
+--
+
++ Number of assigned agents must be greater than or equal to minimum but less than or equal to the maximum
+--
+
++ The number of tickets can’t exceed the estimated number of illegally parked cars
+--
+
++ The total number of assigned agents must be less than or equal to 1000
+
+---
+
+
+
+---
+
+#10 Min Break
+
+---
+
+#Clustering
++ Finding groups of objects similar to one another and different from the objects in other groups
+
+
+---
+
+#Sounds simple, right?
+
+---
+
+#There's a few things we need to talk about...
+
+
+---
+
+# Feature Engineering
+> Actually the success of all Machine Learning algorithms depends on how you present the data.  
+> - Mohammad Pezeshki
+
+http://www.quora.com/What-are-some-general-tips-on-feature-selection-and-engineering-that-every-data-scientist-should-know
+
+---
+
+#Feature Engineering
++ The process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data
+
+http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/
+---
+
+#Feature Engineering
+--
+
+## Depends on
+--
+
++ The data you’re using
+--
+
++ The domain you’re working in
+--
+
++ The models you’re working with
+--
+
+
+##Will impact the results
+--
+
+
+##More an art than a science
+
+---
+
+#Data Types
+--
+
++ Nominal (Categorical) -> Examples: ID numbers, eye color, zip codes
+--
+
++ Ordinal -> Examples: rankings (e.g., taste of potato chips on a scale from 1-10), grades, height in {tall, medium, short}
+--
+
++ Interval -> Examples: calendar dates, temperatures in Celsius or Fahrenheit 
+--
+
++ Ratio -> Examples: temperature in Kelvin, length, time, counts
+
+---
+
+#Discrete Attributes
+--
+
++  Has only a finite or countably infinite set of values
+--
+
++  Examples: zip codes, counts, or the set of words in a collection of documents
+--
+
++  Often represented as integer variables
+--
+
++  Note: binary attributes are a special case of discrete attributes
+
+---
+
+#Continuous Attributes
+--
+
++ Has real numbers as attribute values
+--
+
++ Examples: temperature, height, or weight
+--
+
++ Practically, real values can only be measured and represented using a finite number of digits
+--
+
++ Continuous attributes are typically represented as floating-point variables
+
+---
+
+#Unsupervised Learning
+
+[![img-center-90](http://www.dumpaday.com/wp-content/uploads/2012/12/funny-quotes-i-know-i-am-unsupervised.jpg)](http://www.dumpaday.com/funny-pictures/funny-pictures-of-the-day-47-pics/attachment/funny-quotes-i-know-i-am-unsupervised/)
+
+---
+
+#Unsupervised Learning
+--
+
++ Finding hidden structure in unlabeled data
+--
+
++ Don’t know the target variable we’re trying to predict
+--
+
++ Allow the algorithm to decide what value to give the data
+--
+
++ Requires much more tuning and development
+--
+
++ No good way of measuring success
+
+
+---
+
 #Thank You
 + [richard@datapolitan.com](mailto:richard@datapolitan.com)
 + http://blog.datapolitan.com
