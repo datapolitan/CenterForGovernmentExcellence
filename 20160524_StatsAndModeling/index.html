@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Analytics for Cities - Center for Government Excellence</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Analytics for Cities</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+
+---
+
+class:center,middle
+#Statistics and Modeling with City Data
+- - - 
+##Richard Dunks
+![img-center-small](../images/datapolitan.png)
+###Follow along at: http://bit.ly/GovEx-DataAnalysis
+http://www.datapolitan.com/
+
+---
+
+class:center,middle
+![img-full](http://www.vancitybuzz.com/wp-content/uploads/2014/10/Cookie__say_hi_by_lovestrike_large.jpg)
+
+---
+
+#Goals
+
+---
+
+class:center,middle
+#Introduction to Statistics
+
+---
+class:center,middle
+> We are drowning in information and starving for knowledge.
+
+##Rutherford D. Roger
+
+---
+
+#Why Statistics?
+--
+
++ Tools for extracting meaning from data
+--
+
++ Commonly understood ways of communicating meaning to others
+
+---
+
+#Histogram
+--
+
++ Charts the frequency of instances in the data
+--
+
++ Shows the frequency distribution
+--
+
++ Values are grouped into class intervals
+--
+
++ Best to have a consistent size to class intervals
+
+--
+
+![img-left](../images/hist1.png)
+--
+
+![img-right](../images/hist2.png)
+--
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+######Source: http://mathematica.stackexchange.com/questions/59520/histogram-with-variable-bin-size
+
+---
+
+class:center,middle
+#Distributions of Data
+
+---
+
+#Normal Distribution
+![img-center-large](../images/dist_normal.png)
+
+---
+
+#Long-tail Distribution
+![img-center-large](../images/dist_lt.png)
+
+---
+
+#Bi-Modal Distribution
+![img-full](../images/dist_bm.png)
+
+
+---
+
+class:center,middle
+#Describing Data
+
+---
+
+#Mean
+--
+
++ A representative value for the data
+--
+
++ Usually what people mean by “average”
+--
+
++ Calculate by adding all the values together and dividing by the number instances
+--
+
++ Sensitive to extremes
+
+---
+
+#Median
+--
+
++ The “middle” value of a data set
+--
+
++ Center value of a data set with an odd number of values
+--
+
++ Sum of two middle values divided by 2 if the number of items in a data set is even
+--
+
++ Resistant to extreme values
+--
+
+![img-full](../images/median_balance.png)
+
+---
+
+#Median vs Mean
+![img-full](../images/mean_vs_median.png)
+
+---
+
+#Mode
+--
+
++ The most frequent value in a dataset
+--
+
++ Often used for categorical data
+--
+
+![img-center-medium](../images/mode.png)
+
+---
+
+#Measures of Central Tendency
+--
+
++ Quantitative data tends to cluster around some central value
+--
+
++ Contrasts with the spread of data around that center (i.e. the variability in the data)
+--
+
++ Mean is a more precise measure and more often used
+--
+
++ Median is better when there are extreme outliers
+--
+
++ Mode is used when the data is categorical (as opposed to numeric)
+
+---
+
+class:center,middle
+#Let's do this in Excel
+##What is the mean time a 311 noise-related service request remains open? The median? The mode?
+##How does this look by agency?
+
+---
+
+#Preparing the Data
+![img](../images/311_prep1.png)
+
+---
+
+![img](../images/311_prep2.png)
+
+---
+
+#Preparing the Data
+![img](../images/311_prep3.png)
+
+---
+
+#Preparing the Data
+![img](../images/311_prep4.png)
+
+---
+
+#Calculating Mean
+![img-full](../images/311_mean_calc.png)
+
+--
+
+#Calculating Median
+![img-full](../images/311_median_calc.png)
+
+---
+
+#Calculating Mode
+![img-full](../images/311_mode_calc.png)
+
+---
+
+class:center,middle
+#Now do the same with [2014 noise-related complaints for the same period](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/20140601_20140830_311_Noise.csv?raw=true)
+##How have the times changed? Better or worse? How much?
+
+---
+
+class:center,middle
+#Measuring Variability
+
+---
+
+#Range
+--
+
++ The gap between the minimum value and the maximum value
+--
+
++ Calculated by subtracting the minimum from the maximum
+
+--
+
+![img](../images/311_calc_min.png)
+
+--
+
+![img](../images/311_calc_max.png)
+
+--
+
+![img-center-small](../images/311_calc_range.png)
+---
+
+#Quartiles
+--
+
++ Median splits the data set into two equal groups
+--
+
++ Quartiles split the data into four equal groups
+--
+
++ First quartile is 0-25% of the data
+--
+
++ Second quartile is 25-50% of the data
+--
+
++ Third quartile is 50-75% of the data
+--
+
++ Fourth quartile is 75-100% of the data
+
+---
+
+![img-center-large](../images/quartile_help.png)
+
+---
+
+#Calculating Quartiles
+
+--
+
+![img-full](../images/311_calc_q1.png)
+
+--
+
+![img-full](../images/311_calc_q3.png)
+
+---
+
+#Interquartile Range
+--
+
++ “Middle” 50% of data (between 1st Quartile and 3rd Quartile)
+--
+
+![img-center-large](../images/iqr.png)
+
+---
+
+#Calculate IQR
+![img](../images/311_calc_iqr.png)
+
+---
+
+#Outliers
+--
+
++ Any data points less than 1.5x the IQR or greater than 1.5x the IQR are considered outliers
+--
+
++ Helps identify data points that may skew the analysis
+--
+
++ Focus on the “meat” of the data
+
+---
+
+#Outliers
+![img-center-small](../images/outlier.png)
+http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/ 
+
+---
+
+#Standard Deviation
+--
+
++ The average distance of each data point from the mean
+--
+
+![img-center-medium](../images/stdev_formula.png)
+--
+
++ Larger the standard deviation, the greater the spread
+--
+
+![img-full](../images/std1.png)
+
+---
+
+#Calculating Standard Deviation in Excel
+![img-full](../images/311_calc_stdev.png)
+
+---
+
+#Measures of Variability
+--
+
++ Describe the distribution of our data
+--
+
++ Range (Maximum – Minimum)
+--
+
++ Inter-quartile Range
+--
+
++ Standard Deviation
+--
+
++ Identification of outliers (1.5 x IQR)
+
+---
+
+class:center,middle
+#Now do this for the 2014 data
+##&nbsp;
+
+---
+
+class:center,middle
+#Now do this for the 2014 data
+##Oh, yeah, there's an add-in for this...
+
+
+---
+
+class:center,middle
+#Enabling the Data Analysis Toolpak in Office 2016 for Mac
+
+---
+
+#Enable Add-Ins
+![img-center-small](../images/datp_mac1.png)
+
+---
+
+#Enable Add-Ins
+![img](../images/datp_mac2.png)
+
+---
+
+
+#Restart Excel
+
+--
+
+![img](../images/datp_mac3.png)
+
+--
+
+###[More detailed instructions](https://support.office.com/en-us/article/Load-the-Analysis-ToolPak-in-Excel-2016-for-Mac-617afc33-4af8-4530-b132-7b4e938890d0?ui=en-US&rs=en-US&ad=US&fromAR=1)
+
+---
+
+class:center,middle
+#Enabling the Data Analysis Toolpak in Office 2011 for Mac
+#&nbsp;
+
+---
+
+class:center,middle
+#Enabling the Data Analysis Toolpak in Office 2011 for Mac
+#...there isn't one
+
+---
+
+class:center
+#Download [StatPlus:mac](https://www.analystsoft.com/en/products/statplusmac/download.phtml)
+![img-full](../images/statplus1.png)
+
+--
+
+![img-full](../images/statplus2.png)
+
+---
+
+#Descriptive Statistics in Excel 2013/2016
+![img](../images/datp_summary1.png)
+
+---
+
+#Descriptive Statistics in Excel 2013/2016
+![img](../images/datp_summary2.png)
+
+---
+
+#Descriptive Statistics in Excel 2013/2016
+![img-center-small](../images/datp_summary3.png)
+
+---
+
+#Descriptive Statistics in Excel 2011 for Mac
+![img](../images/statplus3.png)
+
+---
+
+#Descriptive Statistics in Excel 2011 for Mac
+![img](../images/statplus4.png)
+
+---
+
+#Descriptive Statistics in Excel 2011 for Mac
+![img](../images/statplus5.png)
+
+---
+
+#Histograms in Excel 2013/2016
+
+--
+
++ Think we can use PivotTables?
+--
+
++ No
+--
+
++ Need to use the Data Analysis Toolpak
+
+---
+
+#Create Bins
+![img-center-45](../images/2015_hist1.png)
+
+---
+
+#Open Data Analysis Toolpak
+![img-center-45](../images/2015_hist2.png)
+
+--
+
+![img-center](../images/2015_hist3.png)
+
+---
+
+#Results
+![img-left-40](../images/2015_hist4.png)
+
+--
+
+![img-right](../images/2015_hist4a.png)
+
+--
+#&nbsp;
+![img-right-35](../images/2015_hist5.png)
+
+---
+
+class:center,middle
+#Bi-variate Analysis
+
+---
+
+#Correlations
+![img-full](../images/corr1.png)
+###How do we measure this relationship?
+
+---
+
+#Coefficient of Correlation
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
++ Positive numbers are directly proportional
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
++ Positive numbers are directly proportional
++ The closer to either -1 or +1, the greater the correlation
+
+---
+
+#Coefficient of Correlation
+![img-full](../images/corr3.png)
+http://www.statisticshowto.com/what-is-the-correlation-coefficient-formula/
+
+---
+
+#Coefficient of Correlation
+![img-full](../images/corr2.png)
+
+http://pixshark.com/correlation-examples.htm 
+
+---
+
+#Correlations - Height and Weight
+![img-full](../images/corr1.png)
+[Download the data](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/height_weight.xlsx?raw=true)
+
+---
+
+![img-full](../images/calc_corr.png)
+
+---
+#Or we could use Excel
+![img-center-large](../images/corr7.png)
+
+
+---
+
+#Correlations - Recycling and Median Income
+![img](../images/corr6.png)
+###These are even slightly more correlated (r=0.88478) [Check it yourself](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/2013_NYC_CD_MedianIncome_Recycle.xlsx?raw=true)
+
+http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-income-and
+
+---
+
+#Correlations
+![img-center-large](../images/corr4.png)
+
+---
+
+#Correlations
+![img-full](../images/corr5.png)
+
+---
+
+#Correlations
+![img-full](../images/corr5.png)
+##Correlation does not imply causation
+
+---
+
+class:center,middle
+#Why am I doing this with you?
+
+---
+
+class:center,middle
+#10 Min Break
+![img-full](https://imgs.xkcd.com/comics/correlation.png)
+http://xkcd.com/552/ 
+
+---
+
+class:middle,center
+#Predictive Modeling
+
+---
+
+#Prediction
+--
+
++ Knowing the relationship between variables (i.e. the correlation), we can predict values based on the relationship
+--
+
++ Can estimate the magnitude as well as the general trend
+--
+
++ More data points, the better the prediction
+--
+
++ Example -> Knowing the relationship between median income and recycling rates, what can we predict about recycling rates as median incomes grow in communities?
+
+---
+
+#Linear Regression
+--
+
++ Using the known relationship between continuous variables, we can predict unseen values
+--
+
++ Assumes relationship is linear
+
+---
+
+#Formula for a line
+![img](../images/lr1.png)
+#####http://www.algebra-class.com/slope-formula.html 
+
+---
+
+#Formula for a line
+![img](../images/lr2.png)
+#####http://www.mathwarehouse.com/algebra/linear_equation/slope-of-a-line.php
+
+---
+
+#Formula for a line
+--
+
++ Draw a line that minimizes the distance between each point
+--
+
++ “Line of best fit” -> minimizes the sum of squared residuals
+
+--
+
+![img](../images/lr3.png)
+#####http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb
+
+---
+
+#Linear Regression
+--
+
++ Characteristics of the line defines the relationship
+--
+
++ Slope -> relationship between independent and dependent variable (how Y increases per unit of X)
+--
+
++ Intercept -> expected mean value of Y at X=0
+--
+
++ Values along the line are the predicted values for any given value X
+
+---
+
+#Displaying a Trendline in Excel
+![img-left-40](../images/lr4.png)
+--
+![img-right-50](../images/lr5.png)
+
+---
+
+#Calculating coefficients in Excel
+![img-full](../images/lr6.png)
+
+---
+
+#Calculating coefficients in Excel
+![img-full](../images/lr7.png)
+
+---
+
+#Calculating coefficients in Excel
+![img-full](../images/lr8.png)
+
+---
+
+#Linear Regression Line
+![img](../images/lr9.png)
+
+--
+
+###Recycling Rate = 0.0000001869 * MedianIncome + 0.07480414
+
+---
+
+class:center,middle
+#We've created a model to make predictions!
+#&nbsp;
+#&nbsp;
+
+---
+
+class:center,middle
+#We've created a model to make predictions!
+#&nbsp;
+#The predictions are just not very good
+
+---
+
+class:center,middle
+![img-full](../images/data_meme.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/big-data-meme-star-trek.jpg)
+
+---
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+
+
+   </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+      // {
+      //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
