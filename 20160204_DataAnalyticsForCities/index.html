@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Analytics for Cities - Center for Government Excellence</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Analytics for Cities</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+
+---
+
+class:center,middle
+#Data Analytics for Cities: 
+##From Analysis to Action
+- - - 
+##Richard Dunks
+![img-center-small](../images/datapolitan.png)
+###Follow along at: http://bit.ly/GovEx-DataAnalysis
+
+---
+
+#Introductions
++ Name
++ Hometown (or place you call home)
++ One thing you hope to get out of class today
+
+---
+
+#Goals
+--
+
++ Discuss the data-driven decision making process as it relates to city government
+--
+
++ Provide hands-on experience using Excel to clean and summarize data, including useful tips and tricks to working with city data
+--
+
++ Introduce advanced functionality within Excel as it relates to analyzing city data
+--
+
++ Discuss best practices when analyzing and visualizing data in Excel
+--
+
++ Review basic statistical concepts and how to perform statistical analysis in Excel
+
+---
+
+#Outcomes
+--
+
++ You will better understand how to leverage Excel in the analytics process
+--
+
++ You will be more proficient using Excel for cleaning, analyzing, and visualizing data
+--
+
++ You will be familiar with Excel functions and other advanced features of Excel for analyzing data
+--
+
++ You will be familiar with fundamental best practices for visualizing data in Excel
+--
+
++ You will understand the key challenges city employees face in using Excel for analysis
+
+---
+
+#Challenge to you
+--
+
++ There's a range of skills in this room
+--
+
++ If you don't know the material, learn the techniques but focus on the intention
+--
+
++ If you know the material, learn the intention but focus on how it's best communicated to others
+--
+
++ Let's all learn from each other as we go through this material
+---
+
+#Housekeeping
+--
+
++ I'll give you plenty of breaks 
+--
+*- please be back ready to work when the breaks are over*
+--
+
++ We're using different versions of Excel and Operating Systems 
+--
+*- please be patient as I translate steps from one platform to another*
+--
+
++ I'm going to be NYC-centric 
+--
+*- but will keep things broad enough to be applicable in other cities*
+
+---
+
+class:middle,center
+![img-center](../images/319px-Meme-Warning.png)
+
+---
+
+![img](http://moodle.lynfield.school.nz/pluginfile.php/14878/coursecat/description/keep-calm-and-lets-get-started.png)
+
+---
+
+#Why Do We Collect Data?
+--
+
++ Accountability
+--
+
++ Transparency
+--
+
++ "If you can't measure it, you can't manage it"
+--
+
++ "..and you can't fix it"
+---
+
+class:center,middle
+#What good are laws if we don't know how they're implemented?
+#&nbsp;
+---
+
+class:center,middle
+#What good are laws if we don't know how they're implemented?
+#Which is what data tells us
+
+---
+
+class:center,middle
+![img-full](../images/iquantny_fireHydrant2.png)
+Source: [Success: How NYC Open Data and Reddit Saved New Yorkers Over $55,000 a Year](http://iquantny.tumblr.com/post/87573867759/success-how-nyc-open-data-and-reddit-saved-new)
+
+
+---
+
+class: center,middle
+![img-full](../images/gnome.png)
+
+---
+
+class:center, middle
+#So what is Phase 2 for cities?
+
+---
+
+class: center,middle
+![img-full](../images/data_driven.png)
+
+---
+
+class: center,middle
+![img-full](../images/dd_reports.png)
+Source: [Carl Anderson, Creating a Data-Driven Organization](http://www.slideshare.net/CarlAnderson4)
+
+---
+
+class: center,middle
+![img-full](../images/dd_dashboard.png)
+Source: [Carl Anderson, Creating a Data-Driven Organization](http://www.slideshare.net/CarlAnderson4)
+
+---
+
+class: center,middle
+![img-full](../images/dd_alerts.png)
+Source: [Carl Anderson, Creating a Data-Driven Organization](http://www.slideshare.net/CarlAnderson4)
+
+---
+
+class:center,middle
+#It's about bringing these all together
+
+---
+
+#Analytics Value Chain
+![img](../images/avg.png)
+
+---
+
+class:center,middle
+![img-full](http://www.analyticshero.com/wp-content/uploads/2012/10/right_question1.jpg)
+
+---
+
+class: center,middle
+> Not everything that can be counted counts, and not everything that counts can be counted.
+
+##-Albert Einstein
+
+---
+
+class:center,middle
+![img-full](../images/elephant.png)
+
+---
+
+class:center,middle
+![img-full](../images/context1.png)
+Source: [Carl Anderson, Creating a Data-Driven Organization](http://www.slideshare.net/CarlAnderson4)
+
+---
+
+class:center,middle
+![img-full](../images/context2.png)
+
+---
+
+class:center,middle
+![img-full](../images/context3.png)
+
+
+---
+
+class: center,middle
+![img-full](http://www.analyticshero.com/wp-content/uploads/2012/10/inadequate_data.jpg)
+
+<!-- 
+> Facts do not "speak for themselves." They speak for or against competing theories. Facts divorced from theory or visions are mere isolated curiosities.
+
+##-Thomas Sowell *A Conflict of Visions* -->
+
+---
+
+#But don't blindly follow data
+![img-center-medium](../images/bad_gps.png)
+#####https://www.youtube.com/watch?v=a2QIH2uz3p8
+
+---
+
+#You could regret it
+![img](../images/intel_apple.png)
+http://appleinsider.com/articles/13/05/16/intel-chips-could-have-powered-first-iphone-ceo-otelini-says
+---
+
+class:center,middle
+#Overview of Excel
+
+---
+
+#Benefits of Excel
+--
+
++ Easy to use
+--
+
++ Very visual
+--
+
++ Lots of features and functions
+--
+
++ Easy to make charts
+--
+
++ Does a lot of formatting for you
+
+---
+
+#Drawbacks of Excel
+--
+
++ Not very intuitive
+--
+
++ Hard to find what you’re looking for (and they keep moving things around)
+--
+
++ Lots of features and functions
+--
+
++ Easy to make (bad) charts
+--
+
++ Does a lot of formatting for you
+
+---
+
+#Cautionary Tale - London Whale
+--
+
++ $6.2 billion lost by JP Morgan Chase & Co
+--
+
+![img-center-large](../images/london_whale.png)     
+
+http://www.businessinsider.com.au/excel-partly-to-blame-for-trading-loss-2013-2
+
+---
+
+#Excel Problems
+--
+
++ Manual data errors
+--
+
++ Manual copy and paste
+--
+
++ Simple formula error that hid volatility
+
+--
+
+##Fined over $1 billion for poor internal oversight of trading activities
+
+---
+
+class:center,middle
+#Let's play with some data
+###[Right click and select "Save Link As..."](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/20150601_20150830_311_Noise.csv?raw=true)
+###Open in your version of Excel
+
+---
+
+#To Get Started
++ [Autosize all columns](https://www.youtube.com/watch?v=Yeb8emsjtf4)
++ How many rows do we have?
++ What values do we have in the fields?
++ [Filter by certain values](https://support.office.com/en-us/article/Filter-a-table-Power-Query-b5610630-f5bf-4ba4-9217-a628f9b89353?ui=en-US&rs=en-US&ad=US&fromAR=1)
+
+---
+
+#What Hour of the Day Does 311 Receive the Most Requests?
+
+--
+
+![img](../images/hour.png)
+
+---
+
+#What Hour of the Day Does 311 Receive the Most Requests?
+
+![img-full](../images/pv_refresh.png)
+
+---
+
+#What Hour of the Day Does 311 Receive the Most Requests?
+
+![img-full](../images/2015_noise_hour.png)
+
+---
+
+#What Day of the Week Does 311 Receive the Most Requests?
+
+--
+
+![img-full](../images/dow.png)
+
+---
+
+#What Day of the Week Does 311 Receive the Most Requests?
+
+![img-full](../images/pv_refresh.png)
+
+---
+
+#What Day of the Week Does 311 Receive the Most Requests?
+
+![img-center-large](../images/2015_noise_dow.png)
+
+---
+
+#Exploratory Data Analysis
+--
+
++ Goal -> Discover patterns in the data
+--
+
++ Understand the context
+--
+
++ Summarize fields
+--
+
++ Use graphical representations of the data
+--
+
++ Explore outliers
+
+--
+
+###Tukey, J.W. (1977). Exploratory data analysis. Reading, MA: Addison-Wesley.
+
+---
+
+#Telling a Story with Data
+![img-full](../images/bronx.png)
+
+<!-- #Group Exercise
++ In your groups, explore the complaints for your assigned borough
++ What are the common types of complaints?
++ Which Community Boards have the most complaints?
++ Did you find something you didn't expect in the data? -->
+
+<!-- 
+#Presentations
+![img-center](http://www.nyc.gov/html/bkncb13/images/misc/cb13-map1.gif)
+ -->
+---
+
+class:center,middle
+![img-full](../images/batman_robin_running_meme.png)
+###[NYC Population data](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/NYC_Population_1970-2010.xlsx?raw=true)
+
+---
+
+#Preparing the data
+![img-full](../images/nyc_pop1.png)
+
+---
+
+#Preparing the data
+![img-full](../images/nyc_pop2.png)
+
+---
+
+#Preparing the data
+![img-full](../images/nyc_pop3.png)
+
+---
+
+#Preparing the data
+![img-center-medium](../images/nyc_pop4.png)
+
+---
+
+class:center,middle
+#What story do the numbers tell?
+
+---
+
+class:center,middle
+#10 Min Break
+![img-center](http://imgs.xkcd.com/comics/the_data_so_far.png)
+https://xkcd.com/373/ 
+
+---
+
+class:center,middle
+#Lunch
+
+---
+
+class:center,middle
+#Introduction to Visualization Design
+
+---
+
+# Why do we visualize data?
+--
+
++ Explore
+--
+
++ Explain
+--
+
++ Persuade
+
+---
+
+# Encoding
+--
+
++ Visual encoding is the process of encoding information visually
+--
+
++ Every visualization is a mapping between data objects and features to visual objects and features
+
+---
+
+#Bar Chart
+![img-center-ml](../images/chart1.png)
+
+---
+
+#"Barless" Bar Chart
+![img-center-ml](../images/chart2.png)
+
+---
+
+#Horizontal Bar Chart
+![img-full](../images/chart3.png)
+
+---
+
+#Ranked Horizontal Bar Chart
+![img-full](../images/chart4.png)
+
+---
+
+#Grouped Bar Chart
+![img-center-ml](../images/chart5.png)
+
+---
+
+#Grouped Bar Chart
+![img-center-ml](../images/chart6.png)
+
+---
+
+#Precognitive Processing
+![img-full](../images/chart7.png)
+
+---
+
+#Stacked Bar Chart
+![img-center-ml](../images/chart7a.png)
+
+---
+
+#Line Chart
+![img-full](../images/chart8.png)
+
+---
+
+#Why use a line chart?
+![img-full](../images/chart8a.png)
+
+---
+
+#Line Chart with Categorical Data
+![img-full](../images/chart9.png)
+
+---
+
+#Line Chart
+![img](../images/chart10.png)
+
+---
+
+#Line Chart
+![img-full](../images/chart11.png)
+
+---
+
+#Small Multiples
+![img-center-medium](../images/chart12.png)
+
+---
+
+#Scatter Plot
+![img](../images/chart12c.png)
+
+---
+
+#Scatter Plot
+![img](../images/chart12d.png)
+
+---
+
+#Pie Charts
+![img](../images/chart13.png)
+
+---
+
+#Pie Charts
+![img-center-ml](../images/chart15.png)
+
+---
+
+#Pie Charts
+![img-center-ml](../images/chart15.png)
+![img-center-ml](../images/chart16.png)
+"Piecharts". Licensed under [CC BY 1.0](https://creativecommons.org/licenses/by/1.0/legalcode) via [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Piecharts.svg#/media/File:Piecharts.svg)
+
+---
+
+#Pie Charts
+![img-center-large](../images/chart14.png)
+"Badpie" by Gilgongo - Own work. Licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode) via [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Badpie.png#/media/File:Badpie.png)
+
+---
+
+#Pie Charts
+![img](../images/chart17.png)
+http://simplystatistics.org/2012/11/26/the-statisticians-at-fox-news-use-classic-and-novel-graphical-techniques-to-lead-with-data/ 
+
+---
+
+#Donut Charts
+![img](../images/2015_agency_donut.png)
+
+---
+
+#Channels and Marks
+![img-center-large](../images/chart18.png)
+<br>
+From Tamara Munzner, [Visualization Analysis and Design](http://www.cs.ubc.ca/~tmm/vadbook/)
+
+---
+class:center,middle
+#How do you learn to make good charts?
+
+---
+class:center,middle
+#...make a lot of bad charts
+
+---
+
+class:center,middle
+#Let's create some charts
+##Go back to the NYC Population data
+
+---
+
+#Create graph of CD population
+![img-full](../images/pop_graph1.png)
+
+---
+
+#Create graph of CD population
+![img-center-large](../images/pop_graph2.png)
+
+---
+
+#Create graph of CD population
+![img-full](../images/pop_graph3.png)
+
+---
+
+#Create graph of CD population
+![img](../images/pop_graph4.png)
+
+---
+
+#Create graph of CD population
+![img](../images/pop_graph5.png)
+
+---
+
+#Create graph of CD population
+![img-center-large](../images/pop_graph6.png)
+
+---
+
+#Create graph of CD population
+![img-full](../images/pop_graph7.png)
+
+---
+
+class:center,middle
+#5 Min Break
+![img](http://imgs.xkcd.com/comics/decline.png)
+http://xkcd.com/523/
+
+---
+
+class:center, middle
+#Data Cleaning
+![img](http://nerdnumbers.com/wp-content/uploads/2014/07/data_cleaning.jpg)
+
+---
+
+#Discussion
++ Why does data need cleaning?
++ What kind of data cleaning tasks have you had to do?
++ What are some tasks you found difficult?
+
+---
+
+#Splitting Data
+![img-full](../images/311_split1.png)
+
+---
+
+#Splitting Data
+![img-full](../images/311_split2.png)
+
+---
+
+#Splitting Data
+![img](../images/311_split3.png)
+
+---
+
+#Splitting Data
+![img-full](../images/311_split4.png)
+
+---
+
+#Splitting Data
+![img-full](../images/311_split5.png)
+
+---
+
+#Splitting Data
+![img-full](../images/311_split6.png)
+
+---
+
+#Splitting Data
+![img](../images/311_split7.png)
+---
+
+#Splitting Data with MID
+![img-full](../images/mid_help.png)
+---
+
+#Splitting Data with MID
+![img-full](../images/311_mid1.png)
+
+---
+
+#Splitting Data with MID
+![img-full](../images/311_mid2.png)
+
+---
+
+#Other useful functions [LEFT](https://support.office.com/en-us/article/LEFT-LEFTB-functions-9203d2d2-7960-479b-84c6-1ea52b99640c?ui=en-US&rs=en-US&ad=US&fromAR=1) and [RIGHT](https://support.office.com/en-us/article/RIGHT-RIGHTB-functions-240267ee-9afa-4639-a02b-f19e1786cf2f)
+--
+
+![img-full](../images/left_help_crop.png)
+
+--
+
+![img-center-25](../images/spacer.png)
+![img-full](../images/right_help_crop.png)
+
+---
+
+#Combining data with CONCATENATE
+--
+
++ Useful for combining text fields
+--
+
++ Basic Syntax "=CONCATENATE(text1, [text2], ...)"
+--
+
+
+![img-full](../images/concat1.png)
+
+---
+
+#Combining data with CONCATENATE
++ Useful for combining text fields
++ Basic Syntax "=CONCATENATE(text1, [text2], ...)"
+
+
+![img-full](../images/concat2.png)
+
+---
+class:center, middle
+#Calculate the number of noise-related service requests per 1000 people in Community Board
+
+---
+# 1. Complaints per Community Board using PivotTable
+![img](../images/vlu1.png)
+
+---
+
+# 2. Create matching identifier in population sheet
+![img-center-large](../images/pop_prep1.png)
+
+--
+
+![img-center-large](../images/pop_prep2.png)
+
+---
+
+# 2. Create matching identifier in population sheet
+![img-center-large](../images/pop_prep3.png)
+
+--
+![img-center-large](../images/nest.png)
+
+---
+
+# 3. Insert VLOOKUP formula
+![img-full](../images/vlu2.png)
+
+--
+
+![img](../images/vlu3.png)
+
+---
+
+# 4. Calculate complaints per 1000 residents
+![img-center-large](../images/vlu4.png)
+
+--
+
+![img-center-large](../images/vlu5.png)
+
+---
+
+# 5. Revel in the data
+![img](../images/vlu6.png)
+
+---
+
+#What we've covered so far
+--
+
++ Value of data in government
+--
+
++ Exploratory data analysis
+--
+
++ Reviewed formulas in Excel
+--
+
++ Discussed visualization design
+--
+
++ Created charts in Excel
+--
+
++ Split and combined fields using Excel functions
+--
+
++ Joined data using VLOOKUP
+
+---
+
+class:center,middle
+#Questions?
+![img](https://what-if.xkcd.com/imgs/a/97/hands.png)
+
+
+---
+
+class:center,middle
+#Introduction to Statistics
+
+---
+class:center,middle
+> We are drowning in information and starving for knowledge.
+
+##Rutherford D. Roger
+
+---
+
+#Why Statistics?
+--
+
++ Tools for extracting meaning from data
+--
+
++ Commonly understood ways of communicating meaning to others
+
+---
+
+#Histogram
+--
+
++ Charts the frequency of instances in the data
+--
+
++ Shows the frequency distribution
+--
+
++ Values are grouped into class intervals
+--
+
++ Best to have a consistent size to class intervals
+
+--
+
+![img-left](../images/hist1.png)
+--
+
+![img-right](../images/hist2.png)
+--
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+######Source: http://mathematica.stackexchange.com/questions/59520/histogram-with-variable-bin-size
+
+---
+
+class:center,middle
+#Distributions of Data
+
+---
+
+#Normal Distribution
+![img-center-large](../images/dist_normal.png)
+
+---
+
+#Long-tail Distribution
+![img-center-large](../images/dist_lt.png)
+
+---
+
+#Bi-Modal Distribution
+![img-full](../images/dist_bm.png)
+
+
+---
+
+class:center,middle
+#Describing Data
+
+---
+
+#Mean
+--
+
++ A representative value for the data
+--
+
++ Usually what people mean by “average”
+--
+
++ Calculate by adding all the values together and dividing by the number instances
+--
+
++ Sensitive to extremes
+
+---
+
+#Median
+--
+
++ The “middle” value of a data set
+--
+
++ Center value of a data set with an odd number of values
+--
+
++ Sum of two middle values divided by 2 if the number of items in a data set is even
+--
+
++ Resistant to extreme values
+--
+
+![img-full](../images/median_balance.png)
+
+---
+
+#Median vs Mean
+![img-full](../images/mean_vs_median.png)
+
+---
+
+#Mode
+--
+
++ The most frequent value in a dataset
+--
+
++ Often used for categorical data
+--
+
+![img-center-medium](../images/mode.png)
+
+---
+
+#Measures of Central Tendency
+--
+
++ Quantitative data tends to cluster around some central value
+--
+
++ Contrasts with the spread of data around that center (i.e. the variability in the data)
+--
+
++ Mean is a more precise measure and more often used
+--
+
++ Median is better when there are extreme outliers
+--
+
++ Mode is used when the data is categorical (as opposed to numeric)
+
+---
+
+class:center,middle
+#Let's do this in Excel
+##What is the mean time a 311 noise-related service request remains open? The median? The mode?
+##How does this look by agency?
+
+---
+
+#Preparing the Data
+![img](../images/311_prep1.png)
+
+---
+
+![img](../images/311_prep2.png)
+
+---
+
+#Preparing the Data
+![img](../images/311_prep3.png)
+
+---
+
+#Preparing the Data
+![img](../images/311_prep4.png)
+
+---
+
+#Calculating Mean
+![img-full](../images/311_mean_calc.png)
+
+--
+
+#Calculating Median
+![img-full](../images/311_median_calc.png)
+
+---
+
+#Calculating Mode
+![img-full](../images/311_mode_calc.png)
+
+---
+
+class:center,middle
+#Now do the same with [2014 noise-related complaints for the same period](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/20140601_20140830_311_Noise.csv?raw=true)
+##How have the times changed? Better or worse? How much?
+
+---
+
+class:center,middle
+#Measuring Variability
+
+---
+
+#Range
+--
+
++ The gap between the minimum value and the maximum value
+--
+
++ Calculated by subtracting the minimum from the maximum
+
+--
+
+![img](../images/311_calc_min.png)
+
+--
+
+![img](../images/311_calc_max.png)
+
+--
+
+![img-center-small](../images/311_calc_range.png)
+---
+
+#Quartiles
+--
+
++ Median splits the data set into two equal groups
+--
+
++ Quartiles split the data into four equal groups
+--
+
++ First quartile is 0-25% of the data
+--
+
++ Second quartile is 25-50% of the data
+--
+
++ Third quartile is 50-75% of the data
+--
+
++ Fourth quartile is 75-100% of the data
+
+---
+
+![img-center-large](../images/quartile_help.png)
+
+---
+
+#Calculating Quartiles
+
+--
+
+![img-full](../images/311_calc_q1.png)
+
+--
+
+![img-full](../images/311_calc_q3.png)
+
+---
+
+#Interquartile Range
+--
+
++ “Middle” 50% of data (between 1st Quartile and 3rd Quartile)
+--
+
+![img-center-large](../images/iqr.png)
+
+---
+
+#Calculate IQR
+![img](../images/311_calc_iqr.png)
+
+---
+
+#Outliers
+--
+
++ Any data points less than 1.5x the IQR or greater than 1.5x the IQR are considered outliers
+--
+
++ Helps identify data points that may skew the analysis
+--
+
++ Focus on the “meat” of the data
+
+---
+
+#Outliers
+![img-center-small](../images/outlier.png)
+http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/ 
+
+---
+
+#Standard Deviation
+--
+
++ The average distance of each data point from the mean
+--
+
+![img-center-medium](../images/stdev_formula.png)
+--
+
++ Larger the standard deviation, the greater the spread
+--
+
+![img-full](../images/std1.png)
+
+---
+
+#Calculating Standard Deviation in Excel
+![img-full](../images/311_calc_stdev.png)
+
+---
+
+#Measures of Variability
+--
+
++ Describe the distribution of our data
+--
+
++ Range (Maximum – Minimum)
+--
+
++ Inter-quartile Range
+--
+
++ Standard Deviation
+--
+
++ Identification of outliers (1.5 x IQR)
+
+---
+
+class:center,middle
+#Now do this for the 2014 data
+##&nbsp;
+
+---
+
+class:center,middle
+#Now do this for the 2014 data
+##Oh, yeah, there's an add-in for this...
+
+
+---
+
+class:center,middle
+#Enabling the Data Analysis Toolpak in Office 2016 for Mac
+
+---
+
+#Enable Add-Ins
+![img-center-small](../images/datp_mac1.png)
+
+---
+
+#Enable Add-Ins
+![img](../images/datp_mac2.png)
+
+---
+
+
+#Restart Excel
+
+--
+
+![img](../images/datp_mac3.png)
+
+--
+
+###[More detailed instructions](https://support.office.com/en-us/article/Load-the-Analysis-ToolPak-in-Excel-2016-for-Mac-617afc33-4af8-4530-b132-7b4e938890d0?ui=en-US&rs=en-US&ad=US&fromAR=1)
+
+---
+
+class:center,middle
+#Enabling the Data Analysis Toolpak in Office 2011 for Mac
+#&nbsp;
+
+---
+
+class:center,middle
+#Enabling the Data Analysis Toolpak in Office 2011 for Mac
+#...there isn't one
+
+---
+
+class:center
+#Download [StatPlus:mac](https://www.analystsoft.com/en/products/statplusmac/download.phtml)
+![img-full](../images/statplus1.png)
+
+--
+
+![img-full](../images/statplus2.png)
+
+---
+
+#Descriptive Statistics in Excel 2013/2016
+![img](../images/datp_summary1.png)
+
+---
+
+#Descriptive Statistics in Excel 2013/2016
+![img](../images/datp_summary2.png)
+
+---
+
+#Descriptive Statistics in Excel 2013/2016
+![img-center-small](../images/datp_summary3.png)
+
+---
+
+#Descriptive Statistics in Excel 2011 for Mac
+![img](../images/statplus3.png)
+
+---
+
+#Descriptive Statistics in Excel 2011 for Mac
+![img](../images/statplus4.png)
+
+---
+
+#Descriptive Statistics in Excel 2011 for Mac
+![img](../images/statplus5.png)
+
+---
+
+#Histograms in Excel 2013/2016
+
+--
+
++ Think we can use PivotTables?
+--
+
++ No
+--
+
++ Need to use the Data Analysis Toolpak
+
+---
+
+#Create Bins
+![img-center-45](../images/2015_hist1.png)
+
+---
+
+#Open Data Analysis Toolpak
+![img-center-45](../images/2015_hist2.png)
+
+--
+
+![img-center](../images/2015_hist3.png)
+
+---
+
+#Results
+![img-left-40](../images/2015_hist4.png)
+
+--
+
+![img-right](../images/2015_hist4a.png)
+
+--
+#&nbsp;
+![img-right-35](../images/2015_hist5.png)
+
+---
+
+class:center,middle
+#Bi-variate Analysis
+
+---
+
+#Correlations
+![img-full](../images/corr1.png)
+###How do we measure this relationship?
+
+---
+
+#Coefficient of Correlation
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
++ Positive numbers are directly proportional
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
++ Positive numbers are directly proportional
++ The closer to either -1 or +1, the greater the correlation
+
+---
+
+#Coefficient of Correlation
+![img-full](../images/corr3.png)
+http://www.statisticshowto.com/what-is-the-correlation-coefficient-formula/
+
+---
+
+#Coefficient of Correlation
+![img-center-100](../images/corr2.png)
+
+http://pixshark.com/correlation-examples.htm 
+
+---
+
+#Correlations - Height and Weight
+![img-full](../images/corr1.png)
+[Download the data](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/height_weight.xlsx?raw=true)
+
+---
+
+![img-full](../images/calc_corr.png)
+
+---
+#Or we could use Excel
+![img-center-large](../images/corr7.png)
+
+
+---
+
+#Correlations - Recycling and Median Income
+![img](../images/corr6.png)
+###These are even slightly more correlated (r=0.88478) [Check it yourself](https://github.com/datapolitan/CenterForGovernmentExcellence/blob/gh-pages/data/2013_NYC_CD_MedianIncome_Recycle.xlsx?raw=true)
+
+http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-income-and
+
+---
+
+#Correlations
+![img-center-large](../images/corr4.png)
+
+---
+
+#Correlations
+![img-full](../images/corr5.png)
+
+---
+
+#Correlations
+![img-full](../images/corr5.png)
+##Correlation does not imply causation
+
+---
+
+class:center,middle
+#Why am I doing this with you?
+
+---
+
+class:center,middle
+#10 Min Break
+![img-full](https://imgs.xkcd.com/comics/correlation.png)
+http://xkcd.com/552/ 
+
+---
+
+class:middle,center
+#Predictive Modeling
+
+---
+
+#Prediction
+--
+
++ Knowing the relationship between variables (i.e. the correlation), we can predict values based on the relationship
+--
+
++ Can estimate the magnitude as well as the general trend
+--
+
++ More data points, the better the prediction
+--
+
++ Example -> Knowing the relationship between median income and recycling rates, what can we predict about recycling rates as median incomes grow in communities?
+
+---
+
+#Linear Regression
+--
+
++ Using the known relationship between continuous variables, we can predict unseen values
+--
+
++ Assumes relationship is linear
+
+---
+
+#Formula for a line
+![img](../images/lr1.png)
+#####http://www.algebra-class.com/slope-formula.html 
+
+---
+
+#Formula for a line
+![img](../images/lr2.png)
+#####http://www.mathwarehouse.com/algebra/linear_equation/slope-of-a-line.php
+
+---
+
+#Formula for a line
+--
+
++ Draw a line that minimizes the distance between each point
+--
+
++ “Line of best fit” -> minimizes the sum of squared residuals
+
+--
+
+![img](../images/lr3.png)
+#####http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb
+
+---
+
+#Linear Regression
+--
+
++ Characteristics of the line defines the relationship
+--
+
++ Slope -> relationship between independent and dependent variable (how Y increases per unit of X)
+--
+
++ Intercept -> expected mean value of Y at X=0
+--
+
++ Values along the line are the predicted values for any given value X
+
+---
+
+#Displaying a Trendline in Excel
+![img-left-40](../images/lr4.png)
+--
+![img-right-50](../images/lr5.png)
+
+---
+
+#Calculating coefficients in Excel
+![img-full](../images/lr6.png)
+
+---
+
+#Calculating coefficients in Excel
+![img-full](../images/lr7.png)
+
+---
+
+#Calculating coefficients in Excel
+![img-full](../images/lr8.png)
+
+---
+
+#Linear Regression Line
+![img](../images/lr9.png)
+
+--
+
+###Recycling Rate = 0.0000001869 * MedianIncome + 0.07480414
+
+---
+
+class:center,middle
+#We've created a model to make predictions!
+#&nbsp;
+#&nbsp;
+
+---
+
+class:center,middle
+#We've created a model to make predictions!
+#&nbsp;
+#The predictions are just not very good
+
+---
+
+class:center,middle
+![img-full](../images/data_meme.png)
+
+---
+
+class:center,middle
+![img-center-large](../images/big-data-meme-star-trek.jpg)
+
+---
+
+class:center,middle
+#Life beyond Excel
+
+---
+
+#LibreOffice and OpenOffice
+--
+
++ Free and open-source office suites of software
+--
+
++ Fully featured with similar functionality to Microsoft Office
+--
+
++ And they’re free
+--
+
++ http://www.openoffice.org/
+--
+
++ https://www.libreoffice.org/ 
+
+---
+
+#OpenRefine (Google Refine)
+--
+
++ Free and open-source data cleaning tool
+--
+
++ Works in the browser
+--
+
++ Works with lots of data types
+--
+
++ Great for converting between Excel files, CSV, and JSON
+--
+
++ Facets are powerful (facet on anything)
+--
+
++ Meant specifically to clean data
+--
+
++ Available at: http://openrefine.org/ 
+
+---
+
+#OpenRefine - Cons
+--
+
++ In browser memory is limited
+--
+
++ Only display 50 rows at a time
+--
+
++ Meant for cleaning data (not displaying it)
+
+---
+
+#Python
+--
+
++ Computer language useful for working with data
+--
+
++ Easy to learn syntax for simple operations
+--
+
++ Lots of mathematical and scientific packages for advanced analysis
+--
+
++ Visualization packages for creating charts and graphs
+--
+
++ Can (generally) install on city computers
+--
+
++ Distribution available at: https://www.continuum.io/why-anaconda 
+
+---
+
+#R 
+--
+
++ Open-source programming language for statistical analysis and visualization
+--
+
++ Implementation of the [S programming language](https://en.wikipedia.org/wiki/S_%28programming_language%29)
+--
+
++ Relatively easy to use
+--
+
++ Packages for virtually any statistical technique or visualization
+--
+
++ Limited utility outside statistical analysis and visualization
+--
+
++ [RStudio](https://www.rstudio.com/) is an integrated development environment (IDE) that makes working with R easier
+
+---
+
+class:center,middle
+#And we're done
+
+---
+
+class:center,middle
+![img](http://www.thestudentpocketguide.com/wp-content/uploads/Winner1.jpg)
+
+---
+
+#What we covered this afternoon
+--
+
++ Basic statistical measures, including measures of central tendency and measures of variability
+--
+
++ Using the Data Analysis Toolpak (and StatPlus:mac)
+--
+
++ Creating histograms in Excel
+--
+
++ Calculating coefficients of correlation
+--
+
++ Making predictions using linear regression
+--
+
++ Life beyond Excel
+
+---
+
+#Goals
+--
+
++ Discuss the data-driven decision making process as it relates to city government
+--
+
++ Provide hands-on experience using Excel to clean and summarize data, including useful tips and tricks to working with city data
+--
+
++ Introduce advanced functionality within Excel as it relates to analyzing city data
+--
+
++ Discuss best practices when analyzing and visualizing data in Excel
+--
+
++ Review basic statistical concepts and how to perform statistical analysis in Excel
+
+---
+
+#Outcomes
+--
+
++ You will better understand how to leverage Excel in the analytics process
+--
+
++ You will be more proficient using Excel for cleaning, analyzing, and visualizing data
+--
+
++ You will be familiar with Excel functions and other advanced features of Excel for analyzing data
+--
+
++ You will be familiar with fundamental best practices for visualizing data in Excel
+--
+
++ You will understand the key challenges city employees face in using Excel for analysis
+
+---
+
+class:center,middle
+#What is your feedback?
+![img-center-large](https://mosaicprojects.files.wordpress.com/2014/01/feedback.png)
+
+---
+
+#Possible topics for next training
++ More data modeling with Excel (decision modeling, predictive analysis, clustering, etc)
++ Mapping data with open-source tools
++ Working with databases
++ Statistical analysis in Python
++ The practice of teaching urban analytics 
+
+---
+
+#A few warnings
+--
+
++ Don't be a solution in search of a problem
+--
+
++ Data and technology solutions are wasted if there wasn't a problem to begin with
+--
+
++ Context is king
+---
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+
+
+   </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+      // {
+      //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
