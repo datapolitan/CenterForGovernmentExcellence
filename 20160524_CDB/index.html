@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Webmapping with CartoDB - Center for Government Excellence</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Interactive Webmapping with CartoDB</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+
+---
+
+class:center,middle
+#Interactive Webmapping with CartoDB
+
+- - - 
+
+##Richard Dunks
+###Follow along at: http://bit.ly/GovEx-SIA
+
+![img-center-40](../images/datapolitan.png)
+
+---
+
+#Goals
++ Review some basic mapping concepts
++ Introduce CartoDB
++ Practice creating basic maps in CartoDB
++ Discuss some basic principles of map design
+
+---
+
+class:center,middle
+#Types of Maps
+
+---
+
+#General Reference Maps
+
+--
+
++ Show important physical features of an area
+--
+
++ Include natural and man-made features
+--
+
++ Usually meant to help aid in the navigation or discovery of locations
+--
+
++ Usually fairly simple
+--
+
++ Can be stylized based on the intended audience (tourists vs locals)
+
+---
+
+class:center,middle
+![img-center-90](../images/referencemap.png)
+#####Source: http://nationalmap.gov/small_scale/printable/reference.html
+---
+
+#Thematic Maps
+
+--
+
++ Focuses on a specific theme or subject area
+--
+
++ Features on the map represent the phenomenon being mapped
+--
+
++ Spatial features used for reference
+---
+
+![img-full](../images/thematic1.png)
+#####Source: http://www.usna.usda.gov/Hardzone/ushzmap.html 
+
+---
+
+#Choropleth
+![img-center-75](../images/choropleth.png)
+
+#####Source: http://www.geogalot.com/myp-humanities/year-9/understanding-hazards/003---choropleth-mapping
+
+---
+
+#Choropleth
+
+![img-center-90](../images/floatingsheep-beer-church.jpg)
+
+#####Source: http://www.floatingsheep.org/2012/07/church-or-beer-americans-on-twitter.html
+
+---
+
+#Area Cartogram – Electoral Votes by State
+![img-center-60](../images/Cartogram_US.png)
+#####Source: http://training.fws.gov/courses/csp/csp7203/resources/Types_of_Maps_2013.pdf 
+
+---
+
+#Dorling Cartogram – Obesity by State
+![img-full](../images/dorling.png)
+#####Source: http://homes.cs.washington.edu/~jheer//files/zoo/ 
+
+---
+
+class:center,middle
+#Basic Map Elements
+
+---
+
+#Points  
+![img-center-50](../images/point_feature.png)
+####Source: http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/vector_data.html#overview
+
+---
+
+#Lines
+![img-center-50](../images/polyline_feature.png)
+####Source: http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/vector_data.html#overview
+
+---
+
+#Polygons
+![img-center-50](../images/polygon_feature.png)
+####Source: http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/vector_data.html#overview
+
+---
+
+#Raster
+
+--
+
++ Grid of values
+
+--
+
+![img](../images/raster.png)
+[Source](https://grass.osgeo.org/grass70/manuals/d.shade.html)
+
+---
+
+#Layers
+![img-full](../images/map1.png)
+####Image Source: http://www.geocontrolling.com/co-je-gis.htm
+
+---
+
+class:center,middle
+#We make maps with a GIS
+#&nbsp;
+
+---
+
+class:center,middle
+#We make maps with a GIS
+#CartoDB is a GIS in the cloud
+
+---
+
+#Geographic Information System (GIS)
+> Any system for capturing, storing, checking, and displaying data related to positions on the Earth's surface
+
++ [National Geographic Education Encyclopedia](http://education.nationalgeographic.org/encyclopedia/geographic-information-system-gis/)
+
+---
+
+#Or more simply
+
+> In a GIS, you connect _**data**_ with _**geography**_.
+
++ [GISgeography.com](http://gisgeography.com/what-gis-geographic-information-systems/)
+
+---
+
+#Disclaimer
+--
+
+##I'm a [CartoDB Partner](https://cartodb.com/partners/)
+--
+
+##But this isn't a sales session, merely an opportunity to share the technology with NYC employees
+
+---
+class:center,middle
+#So Let's Create a Map
+
+---
+
+#Getting Set-up
+1. Go to https://cartodb.com
+2. Register for an account
+3. Download the [exercise data](../data/20141001_20150531_311_HPD_HotWater.csv)
+4. Drag and drop it into your dashboard
+
+---
+
+#Let's Create This Map
+<iframe width="100%" height="475" frameborder="0" src="https://richard-datapolitan.cartodb.com/viz/cfd425fa-2088-11e6-87be-0e787de82d45/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+---
+
+#Let's Add Another Layer
++ [Download this data](../data/20141001_20150531_geocoded_HPD_heat_hotwater_violations.csv) and add it to your map
+
+---
+
+#Let's Combine Them Together
+<iframe width="100%" height="475" frameborder="0" src="https://richard-datapolitan.cartodb.com/viz/d4f860c6-1c6b-11e6-b01a-0e31c9be1b51/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+---
+
+class:center,middle
+#Design Exercise
+
+---
+
+#CartoCSS
+--
+
++ Defines map styles using CSS-style properties
+--
+
++ Gives you control of design at different levels
+--
+
++ Allows you to customize elements beyond the CartoDB wizard
+
+---
+
+#Using CartoCSS with CartoDB
+--
+
++ Use the wizard to generate CartoCSS and modify as necessary
+--
+
++ Always indent your code for readability
+--
+
++ Check that you’ve correctly enclosed code in curly braces
+--
+
++ Order matters
+
+---
+
+class:center,middle
+![img-full](../images/batman_docs.png)
+###http://docs.cartodb.com/cartodb-platform/cartocss/
+
+
+---
+
+#Let's Style a Map
+<iframe width="100%" height="475" frameborder="0" src="https://richard-datapolitan.cartodb.com/viz/84289396-125c-11e6-89ae-0e674067d321/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+---
+
+#Get the Data
++ [The percentage of subway users](https://richard-datapolitan.cartodb.com/tables/geoid_subway/public/map)
++ [Get subway routes and stations](https://spatialityblog.com/2015/10/05/new-subway-station-in-nyc-hudson-yards/)
+
+---
+
+#Let's Style a Map: Census Data
+```CSS
+#geoid_subway [nta_name = "park-cemetery-etc-Brooklyn"],
+#geoid_subway [nta_name = "park-cemetery-etc-Bronx"],
+#geoid_subway [nta_name = "park-cemetery-etc-Manhattan"],
+#geoid_subway [nta_name = "park-cemetery-etc-Queens"],
+#geoid_subway [nta_name = "park-cemetery-etc-Staten Island"]{
+  polygon-fill: #006622;
+  line-color: #055D00;
+}
+
+#geoid_subway [nta_name != "park-cemetery-etc-Brooklyn"][nta_name != "park-cemetery-etc-Bronx"][nta_name != "park-cemetery-etc-Manhattan"][nta_name != "park-cemetery-etc-Queens"][nta_name != "park-cemetery-etc-Staten Island"][nta_name != "Airport"][subway_percentage = 'No Pop'],
+#geoid_subway [nta_name="Airport"]{
+  polygon-fill: #808080;
+  polygon-pattern-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/patterns/diagonal_1px_med.png);
+}
+```
+---
+
+#Let's Style a Map: Style Subway Lines
+```CSS
+#nyctsubwayroutes_20150914[route_id="1"],
+#nyctsubwayroutes_20150914[route_id="2"],
+#nyctsubwayroutes_20150914[route_id="3"] {
+   line-color: #EE352E;
+}
+#nyctsubwayroutes_20150914[route_id="B"],
+#nyctsubwayroutes_20150914[route_id="D"],
+#nyctsubwayroutes_20150914[route_id="F"],
+#nyctsubwayroutes_20150914[route_id="M"] {
+   line-color: #FF6319;
+}
+#nyctsubwayroutes_20150914[route_id="N"],
+#nyctsubwayroutes_20150914[route_id="R"],
+#nyctsubwayroutes_20150914[route_id="Q"] {
+   line-color: #FCCC0A;
+}
+#nyctsubwayroutes_20150914[route_id="G"] {
+   line-color: #6CBE45;
+}
+#nyctsubwayroutes_20150914[route_id="L"]{
+  line-color:#A7A9AC;
+}
+#nyctsubwayroutes_20150914[route_id="7"]{
+  line-color:#B933AD;
+}
+```
+---
+
+#Let's Style a Map: Style Subway Lines
+```CSS
+#nyctsubwayroutes_20150914[route_id="FS"],
+#nyctsubwayroutes_20150914[route_id="GS"],
+#nyctsubwayroutes_20150914[route_id="H"],
+#nyctsubwayroutes_20150914[route_id="S"]{
+  line-color:#808183;
+}
+#nyctsubwayroutes_20150914[route_id="6"],
+#nyctsubwayroutes_20150914[route_id="5"],
+#nyctsubwayroutes_20150914[route_id="4"]{
+  line-color:#00933C;
+}
+#nyctsubwayroutes_20150914[route_id="A"],
+#nyctsubwayroutes_20150914[route_id="C"],
+#nyctsubwayroutes_20150914[route_id="SI"],
+#nyctsubwayroutes_20150914[route_id="E"]{
+  line-color:#0039A6;
+}
+#nyctsubwayroutes_20150914[route_id="J"],
+#nyctsubwayroutes_20150914[route_id="Z"]{
+  line-color:#996633;
+}
+#nyctsubwayroutes_20150914[route_id="Air"]{
+  line-opacity:0;
+}
+```
+
+---
+
+#Resources
++ [CartoDB Academy](https://academy.cartodb.com/)
++ [GIS Stack Exchange](http://gis.stackexchange.com/)
++ [The PostGIS Documentation](http://postgis.net/documentation)
+
+---
+
+class:center,middle
+#Any questions?
+
+---
+
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+
+
+   </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+      // {
+      //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
