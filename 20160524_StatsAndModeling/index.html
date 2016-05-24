@@ -1055,6 +1055,14 @@ class:center, middle
 
 ---
 
+class:center
+![img-center-40](../images/warning.png)
+##Math, Formulas, and Functions Ahead
+##Proceed at your own risk!
+###Try and follow along as best you can
+
+---
+
 #Prepare the data
 + Create a new column
 
@@ -1392,12 +1400,159 @@ http://xkcd.com/303/
 --
 
 ###You can also filter by the clusters to make it clearer
+
+---
+
+class:middle,center
+#How do we feel about these clusters?
+
 ---
 
 #Inspirational Thought
 <!-- ![img-right-30](../images/algo_book.png) -->
 > ##The validation of clustering structures is the most difficult and frustrating part of cluster analysis. 
 > ###Algorithms for Clustering Data, Jain and Dubes
+
+---
+
+#Checking the results
+--
+
++ The goal is to minimize the distance within clusters and maximize the distance between clusters
+--
+
++ Cities shouldn't be closer to cities of another cluster than they are to cities of their own cluster
+--
+
++ We can calculate that (called the silhouette)
+--
+
++ Measures average distance to points in neighboring cluster subtracted by average distance to points in assigned cluster divided by the greater of those two
+--
+
++ First we need to calculate distances
+
+---
+
+#Calculating Distances
++ Create a new sheet
++ Call it "Distances"
++ Copy the cities from the 5_Cluster sheet in the second row starting in the third column
++ Transpose the cities into the second column starting in the third row
+
+---
+
+#Calculating Distances
++ Add a 0 to the first row, third column above "AlbuquerqueNM"
++ Write a simple formula to increment and paste across
++ Do the same in the first column
+
+![img-center-80](../images/ca5.png)
+
+---
+
+#Calculating Distances
++ Now we need to calculate the distance from every city to every other
+
+###`=SQRT(SUM((OFFSET('5_Cluster'!$H$2:$H$14,0,Distances!C$1)-OFFSET('5_Cluster'!$H$2:$H$14,0,Distances!$A3))^2))`
+
++ This is the same type of formula we used to calculate the distance between each city and the cluster center
++ Now we're going to [OFFSET](https://support.office.com/en-us/article/OFFSET-function-c8de19ae-dd79-4b9b-a14e-b4d906d11b66) by the value in the index (starting with Albuquerque)
+
+---
+
+#Calculating Distances
++ Click and drag to calculate all the distances
++ Cities should have a 0 distance from themselves
+
+![img-center-100](../images/ca6.png)
+
+---
+
+#Calculating the Silhouette
++ Create a new sheet
++ Paste the cities with their cluster assignments
++ Add columns for each cluster
++ Calculate the average distance from the city to cities in the other cluster, starting at the top left
+
+###`=AVERAGEIF('5_Cluster'!$H$21:$KG$21,1,Distances!$C3:$KB3)`
+
+---
+
+#Calculating the Silhouette
++ Copy and paste across the sheet
+
+![img-center-100](../images/ca7.png)
+
++ Add column "Closest" (to calculate the closest cluster)
++ Add column "Second Closest"
+
+---
+
+#Calculating the Silhouette
++ Calculate the closest cluster distance `=MIN(C2:G2)`
++ Calculate the second closest cluster `=SMALL(C2:G2,2)`
+
+![img-center-100](../images/ca8.png)
+
++ Ideally the closest cluster is the assigned cluster, but that isn't always the case
+ 
+---
+
+#Calculating the Silhouette
++ Add column "Assigned Cluster"
++ Add formula `=INDEX(C2:G2,B2)`<br>(returns the distance for the assigned cluster using [INDEX](https://support.office.com/en-us/article/INDEX-function-a5dcf0dd-996d-40a4-a822-b56b061328bd))
++ Add column "Neighboring Cluster"
++ Add formula `=IF(J2=H2,I2,H2)`<br>(If the assigned cluster is the closest cluster, return the second cluster, else return the assigned cluster)
+
+---
+
+#Calculating the Silhouette
++ Add column "Silhouette Values"
++ Add formula `=K2-J2/MAX(K2,J2)`
++ Remember: Silhouette measures average distance to points in neighboring cluster (K2) subtracted by average distance to points in assigned cluster (J2) divided by the greater of those two
+
+---
+
+#Calculating the Silhouette
+![img-center-60](../images/ca9.png)
+--
+
++ Now take the average silhouette for each city to find the overall silhouette<br>`=AVERAGE(L2:L287)`
+--
+![img-right-30](../images/ca10.png)
+
+---
+
+#Things we can do to improve this
+--
+
++ Change the number of clusters
+--
+
++ Use different features
+--
+
++ Change how we encode the features (Percent Rank instead of dummy variables or simple encodings)
+
+---
+
+#Takeaways
+--
+
++ Similarity can be useful in comparing data points (in this case cities)
+--
+
++ It's not an easy process and requires thought on how to measure what's important
+--
+
++ Creating features can be tricky
+--
+
++ Clustering doesn't always provide easily intelligible results
+--
+
++ Often have to iterate multiple times to arrive at something meaningful
 
 
 ---
