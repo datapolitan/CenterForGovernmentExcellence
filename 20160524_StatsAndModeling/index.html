@@ -1355,9 +1355,43 @@ http://xkcd.com/303/
 
 ---
 
-#Analyze the results (yours will look different)
-![img](../images/ca1.png)
+#Analyze the results
++ Yours will probably look different
++ Any patterns in the clusters?
 
+![img-center-100](../images/ca1.png)
+
+---
+
+#Analyze the results - Cities by cluster
++ Create a new sheet
++ Copy the cities and descriptions
++ Add columns for each cluster with just the number
+
+![img-center-100](../images/ca2.png)
+
+---
+
+#Analyze the results - Cities by cluster
++ We want to count the city that has the matching attribute
++ But only if it belongs to that cluster
+
+![img-center-100](../images/ca3.png)
+
+##`=SUMIF('5_Cluster'!$H$21:$KG$21,C$1,'5_Cluster'!$H13:$KG13)`
+###Assumes the sheet is called "5_Cluster"
+
+---
+
+#Analyze the results - Cities by cluster
++ Copy the results to the rest of the cells
++ Add conditional formatting
++ What do you notice about the results?
+
+![img-center-90](../images/ca4.png)
+--
+
+###You can also filter by the clusters to make it clearer
 ---
 
 #Inspirational Thought
