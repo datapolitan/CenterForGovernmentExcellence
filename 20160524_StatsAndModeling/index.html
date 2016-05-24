@@ -1091,8 +1091,84 @@ Notice we're leaving one out (Mayor is a Democrat)
 
 ##`=IF(V2="West",1,0)`
 
+---
 
+#Prepare the data
++ Copy the sheet in the same workbook
++ Copy all the cells and paste values only
++ Delete the columns you didn't just create
 
+![img-center-100](../images/matrix.png)
+
+---
+
+#Prepare the data
++ Copy the cells and rows
++ Paste transpose into a new sheet
++ Add description column
+
+![img-center-100](../images/cluster_prep13.png)
+
+---
+
+#Prepare the data
++ Insert 5 columns
++ Name the columns `Cluster 1`, `Cluster 2`,...
+
+![img-center-100](../images/cluster_prep14.png)
+
+---
+
+#Prepare the data
++ Add rows for the distance calculations to each cluster
++ Add row for the minimum distance
++ Add row for the assigned cluster
+
+![img-center-60](../images/cluster_prep15.png)
+
+---
+
+#Calculating the Cluster Distances
+![img](../images/dc1.png)
+
+##`=SQRT(SUM((H$2:H$14-$C$2:$C$14)^2))`<br>Press `CTRL` + `SHIFT` + `ENTER`
+
+###This is an [array formula](http://www.cpearson.com/excel/arrayformulas.aspx)
+---
+
+#Calculating the Cluster Distances
++ Do the same for the other clusters
+
+###Cluster 2 -> `=SQRT(SUM((H$2:H$14-$D$2:$D$14)^2))`
+###Cluster 3 -> `=SQRT(SUM((H$2:H$14-$E$2:$E$14)^2))`
+###Cluster 4 -> `=SQRT(SUM((H$2:H$14-$F$2:$F$14)^2))`
+###Cluster 5 -> `=SQRT(SUM((H$2:H$14-$G$2:$G$14)^2))`
+
+##Press `CTRL` + `SHIFT` + `ENTER` after each one<br>They should all be the same value
+
+---
+
+#Calculate the minimum distance
+
+---
+
+#Select the assigned cluster
+
+---
+
+#Calculate the total distance
+
+---
+
+#Setup Solver
+
+---
+
+#Run Solver
+
+---
+
+#Check the results
 
 ---
 
