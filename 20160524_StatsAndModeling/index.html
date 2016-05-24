@@ -562,12 +562,6 @@ http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-
 ![img-full](../images/corr5.png)
 ##Correlation does not imply causation
 
----
-
-class:center,middle
-#10 Min Break
-![img-full](https://imgs.xkcd.com/comics/correlation.png)
-http://xkcd.com/552/ 
 
 ---
 
@@ -773,7 +767,10 @@ class:center,middle
 
 ---
 
+class:center,middle
 #10 Min Break
+![img-full](https://imgs.xkcd.com/comics/correlation.png)
+http://xkcd.com/552/ 
 
 ---
 
@@ -1299,15 +1296,67 @@ Notice we're leaving one out (Mayor is a Democrat)
 
 ---
 
+#Make sure Solver is enabled
+![img-left-30](../images/datp_mac1.png)
+![img-right-60](../images/datp_mac2.png)
+
+---
+
 #Setup Solver
++ Set the objective (minimize the total distance)
+
+![img-center-90](../images/solver1a.png)
 
 ---
 
-#Run Solver
+#Setup Solver
++ Select the cells to change (cluster centers)
+
+![img-center-90](../images/solver1b.png)
 
 ---
 
-#Analyze the results
+#Setup Solver
++ Add constraints (cluster centers less than or equal to 1)
+![img-center-60](../images/solver2a.png)
+--
+
++ May need to do this first, then edit the constraint
+![img-center-60](../images/solver3.png)
+
+---
+
+#Setup Solver
++ Change method to "Evolutionary", the select "Options"
+
+![img-center-80](../images/solver4a.png)
+
+---
+
+#Setup Solver
+![img-right-50](../images/solver5_box.png)
++ Increase the "Maximum Time without Improvement"
+
+---
+
+#Setup Solver
+![img-right-50](../images/solver4.png)
++ It should look like this
+--
+
++ Select "Solve"
+
+---
+class:center,middle
+#10 Min Break
+![img-center-50](http://imgs.xkcd.com/comics/compiling.png)
+
+http://xkcd.com/303/
+
+---
+
+#Analyze the results (yours will look different)
+![img](../images/ca1.png)
 
 ---
 
