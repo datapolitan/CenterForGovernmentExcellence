@@ -701,241 +701,28 @@ Source: http://gerardnico.com/wiki/data_mining/multiple_regression [CC Attributi
 
 ---
 
-#Decision Modeling
---
+#Unsupervised Learning
 
-##Government has constraints
---
-
-+ Money
---
-
-+ Time
---
-
-+ Resources
---
-
-+ Political Concerns
-
---
-
-##Need ways to optimize around what’s available
+[![img-center-90](http://www.dumpaday.com/wp-content/uploads/2012/12/funny-quotes-i-know-i-am-unsupervised.jpg)](http://www.dumpaday.com/funny-pictures/funny-pictures-of-the-day-47-pics/attachment/funny-quotes-i-know-i-am-unsupervised/)
 
 ---
 
-#Decision Models
+#Unsupervised Learning
 --
 
-+ _Decision modeling_ refers to the use of mathematical or scientific methods to determine an allocation of scarce resources that improves or optimizes the performance of a system
++ Finding hidden structure in unlabeled data
 --
 
-+ The terms _operations research_ and _management science_ are also used to refer to decision modeling
-
----
-
-#Decision Models
-![img-center-90](../images/dm1.png)
-
----
-
-#Decision Models - Requirements
++ Don’t know the target variable we’re trying to predict
 --
 
-+ You have to understand the real world process
++ Allow the algorithm to decide what value to give the data
 --
 
-+ You have to be able to quantify the real world process
++ Requires much more tuning and development
 --
 
-+ You need to test your assumptions
---
-
-+ The decisions made based on the model will have an impact that need to be accounted for in the future
-
----
-
-#Let's optimize around parking tickets
-
----
-
-#Constraints
---
-
-+ Density of illegally parked vehicles varies by location
---
-
-+ Number of illegally parked vehicles varies by location
---
-
-+ Amount of fine varies by location
---
-
-+ Number of agents is limited
---
-
-+ Only so many tickets an agent can write in a day
---
-
-+ Only so many tickets are actually paid
---
-
-+ Some neighborhoods are more concerned about illegal parking than others
---
-
-+ Every borough must have at least one ticket agent
-
----
-
-#Constraints
-![img-center-90](../images/dm2.png)
-
---
-
-#Now what?
-
----
-
-#Decision Modeling in Excel
---
-
-##Given a set of constrains
---
-
-+ Excel will optimize for those constraints to achieve the desired outcome
---
-
-+ In this case, we're going to be maximizing the ticket revenue
---
-
-+ We give Excel the constraints and let it do the calculations
---
-
-+ We're going to do something similar later when we do clustering
-
----
-
-#Now Let's Optimize
-![img-center-80](http://i.giphy.com/oadZJB3hwMFjy.gif)
-
----
-
-#Setup Spreadsheet
-![img-center-100](../images/dm3.png)
-
----
-
-#Sum Assigned Agents
-![img-center-100](../images/dm4.png)
-
----
-
-#Add Total Number of Agents (1000)
-![img-center-100](../images/dm5.png)
-
----
-
-#Sum Revenue
-![img-center-100](../images/dm6.png)
-
----
-
-# Calculating Revenue
---
-
-+ The number of agents
---
-
-+ The number of tickets they can write
---
-
-+ The fines for illegal parking in the area they're working in
---
-
-+ The density of illegally parked cars in the area they're working in
---
-
-+ The percent of tickets that are paid for that area
-
----
-
-#We can write that as a formula
-+ `Revenue = # of Agents * 200 * Fine * Density of Illegally Parked Cars * % Collect `
-
----
-
-#For example:
---
-
-+ 100 agents working in Manhattan, writing at most 200 tickets a day
---
-
-+ $90 parking fine
---
-
-+ About 40% of the vehicles in Manhattan are parked illegally
---
-
-+ NYC collects 75% of the fines issued
-
---
-
-##`Expected Revenue = 100 * 200 * 90 * 0.4 * 0.75 = $540,000`
-
----
-
-#Add Revenue Function
-![img-center-100](../images/dm7.png)
-
----
-
-#Ticketing Function
---
-
-+ The number of agents
---
-
-+ The number of tickets they can write in a day (200)
---
-
-+ The density of illegally parked cars
---
-
-
-##`# Ticketed = # of Agents * 200 * Density of Illegally Parked Cars`
-
----
-
-#Add Ticketing Function
-![img-center-100](../images/dm8.png)
-
----
-
-#Spreadsheet Setup
-![img-center-100](../images/dm9.png)
-
----
-
-#Now we're going to optimize for the number of agents
-![img-center-100](../images/dm10.png)
-
----
-
-#Constraints
---
-
-+ Number of assigned agents must be greater than or equal to minimum but less than or equal to the maximum
---
-
-+ The number of tickets can’t exceed the estimated number of illegally parked cars
---
-
-+ The total number of assigned agents must be less than or equal to 1000
-
-
----
-
-#10 Min Break
++ No good way of measuring success
 
 ---
 
@@ -969,17 +756,40 @@ Source: http://www.brookings.edu/blogs/the-avenue/posts/2016/05/18-metro-map-inc
 Source: http://www.brookings.edu/blogs/the-avenue/posts/2016/05/18-metro-map-inclusive-economies-berube-marchio-ng-shearer
 ---
 
+class:center,middle
+![img-center-100](../images/brookings2.png)
+
+Source: https://app.box.com/shared/static/aqkae0ephkuygfvpnxfbknf1irvq1cqg.pdf
+
+---
+
+class:center,middle
 #There's a few things we need to talk about...
 
 ---
 
-# Feature Engineering
+class:center,middle
 ![img-center-100](../images/data_prep.png)
 
 ---
 
 class:center,middle
 #We need to encode attributes (qualitative and quantitative) into representations that are easily understood by machine learning algorithms
+
+---
+
+#Feature Engineering
+![img-center-90](../images/sim1.png)
+
+---
+
+#Feature Engineering
+![img-center-90](../images/sim2.png)
+
+---
+
+#Feature Engineering
+![img-center-90](../images/sim3.png)
 
 ---
 
@@ -1015,6 +825,21 @@ http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-f
 
 ---
 
+# Feature Engineering - Strategies
+--
+
++ Use integers to encode features
+
+![img-center-80](../images/feature1.png)
+--
+
++ Discretize continuous values
+--
+
++ Create dummy variables (but be sure to leave one out)
+
+---
+
 #Feature Engineering - Keep In Mind
 --
 
@@ -1025,97 +850,256 @@ http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-f
 
 ---
 
+#Cities mapped by population and income
+![img-center-80](../images/cities_mapped.png)
 
+--
+###Each city has a location in space based on their attributes
+
+---
+
+##Relative distance between points is their similarity
+![img-center-50](../images/dist1.png)
+--
+
+###South Bend, IN and Erie, PA<br>`√((0.021-0.014)^2 + (0.09-0.07)^2))≈0.021`
+--
+
+###Erie, PA and College Station, TX<br>`√((0.014-0.003)^2 + (0.07-0.04)^2))≈0.032`
+--
+
+###Erie, PA is more similar to South Bend, IN than College Station, TX by this measure (but they're more similar than to more distant points)
 
 ---
 
 #Similarity
++ These look similar
+![img-center-90](../images/sim1.png)
 
 ---
 
-#Distance
-
-
----
-
-#Data Types
---
-
-+ Nominal (Categorical) -> Examples: ID numbers, eye color, zip codes
---
-
-+ Ordinal -> Examples: rankings (e.g., taste of potato chips on a scale from 1-10), grades, height in {tall, medium, short}
---
-
-+ Interval -> Examples: calendar dates, temperatures in Celsius or Fahrenheit 
---
-
-+ Ratio -> Examples: temperature in Kelvin, length, time, counts
+#Similarity
++ These are quantifiably more similar
+![img-center-100](../images/sim4.png)
 
 ---
 
-#Discrete Attributes
+#Features
 --
 
-+  Has only a finite or countably infinite set of values
++ Each feature is a dimension of the data
 --
 
-+  Examples: zip codes, counts, or the set of words in a collection of documents
++ 100 Features means 100 dimensions
 --
 
-+  Often represented as integer variables
---
-
-+  Note: binary attributes are a special case of discrete attributes
+![img](http://i.giphy.com/NbgeJftsErO5q.gif)
 
 ---
 
-#Continuous Attributes
+#Calculating Distance
 --
 
-+ Has real numbers as attribute values
++ We can use Euclidean distance (like in the example)
 --
 
-+ Examples: temperature, height, or weight
++ But there are others (we just won't be talking about them)
+
+---
+
+class:center,middle
+#Back to Clustering
+
+![img](../images/cluster1.png)
+
+---
+
+#Clustering
 --
 
-+ Practically, real values can only be measured and represented using a finite number of digits
++ We can map our features
 --
 
-+ Continuous attributes are typically represented as floating-point variables
++ We can calculate distance
+--
+
++ The next step is to find clusters of points
+
+---
+
+#Clustering - How it works
++ Set the number of clusters you think there are (say 3)
+
+![img](../images/cluster3.png)
+
+---
+
+#Clustering - How it works
++ Randomly select cluster centers in the feature space
+
+![img](../images/cluster4.png)
+
+---
+
+#Clustering - How it works
++ Assign points to the nearest cluster center
+
+![img](../images/cluster5.png)
+
+---
+
+#Clustering - How it works
++ Shift center points to center of cluster
+
+![img](../images/cluster6.png)
+
+---
+
+#Clustering - How it works
++ Reassign cluster assignments
++ Shift cluster centers to be more central
+
+![img](../images/cluster7.png)
+
+---
+
+#Clustering - How it works
++ Repeat -> stop when too few points change clusters
+
+
+![img](../images/cluster8.png)
+
+---
+
+class:center, middle
+#Let's cluster some cities
+##&nbsp;<br>&nbsp;<br>&nbsp;
+---
+
+class:center, middle
+#Let's cluster some cities
+##Disclaimer: I don't think these settings are optimal for analyzing this dataset, but they demonstrate the principles I'm trying to show you
+
+---
+
+#Prepare the data
++ Create a new column
+
+![img-center-100](../images/cluster_prep1.png)
+
+---
+
+#Prepare the data
++ Calculate whether the city has a population above the 75th percentile (above 3rd quartile)
+
+![img-center-100](../images/cluster_prep2.png)
+
+##`=IF(C2>QUARTILE(C$2:C$287,3),1,0)`
+
+---
+
+#Prepare the data
++ Calculate whether the city has a population growth above the 75th percentile (above 3rd quartile)
+
+![img-center-90](../images/cluster_prep3.png)
+
+##`=IF(E2>QUARTILE(E$2:E$287,3),1,0)`
+
+---
+
+#Prepare the data
++ Indicate whether the city participated in the Mayor's Challenge
+
+![img-center-90](../images/cluster_prep4.png)
+
+##`=IF(OR(G2="Applied",G2="Semifinalist",G2="Finalist",G2="Grand Prize Winner"),1,0)`
+
+---
+
+#Prepare the data
++ Indicate whether the city has an open data portal/law
+
+![img-center-80](../images/cluster_prep5.png)
+
+##`=IF(AND(I2<>"None",NOT(ISBLANK(I2))),1,0)`
+###[NOT Function](https://support.office.com/en-us/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77) / [ISBLANK Function](https://support.office.com/en-us/article/IS-functions-0f2d7971-6019-40a0-a171-f2d869135665)
+
+---
+
+#Prepare the data
++ Indicate whether the government is a Council-Manager
+
+![img-center-80](../images/cluster_prep6.png)
+
+##`=IF(K2="Council-Manager",1,0)`
+
+---
+
+#Prepare the data
++ Indicate whether the mayor is a Republican
+
+![img-center-60](../images/cluster_prep7.png)
+
+##`=IF(M2="R",1,0)`<br>
+--
+This is a dummy variable (and I'm not making a joke)
+
+---
+
+#Prepare the data
++ Indicate whether the mayor's party is 'Other'
+
+![img-center-60](../images/cluster_prep8.png)
+
+##`=IF(AND(M2<>"R",M2<>"D"),1,0)`<br>
+--
+Notice we're leaving one out (Mayor is a Democrat)
+
+---
+
+#Prepare the data
++ Calculate whether the city has a median income above the 75th percentile (above 3rd quartile)
+
+![img-center-60](../images/cluster_prep9.png)
+
+##`=IF(P2>QUARTILE($P$2:$P$287,3),1,0)`
+
+---
+
+#Prepare the data
++ Calculate whether the city has a poverty rate above the 75th percentile (above 3rd quartile)
+
+![img-center-60](../images/cluster_prep10.png)
+
+##`=IF(R2>QUARTILE($R$2:$R$287,3),1,0)`
+
+---
+
+#Prepare the data
++ Calculate whether the city has a non-white population above the 75th percentile (above 3rd quartile)
+
+![img-center-60](../images/cluster_prep11.png)
+
+##`=IF(T2>QUARTILE($T$2:$T$287,3),1,0)`
+
+---
+
+#Prepare the data
++ Code the regions West, Midwest, South
+
+![img-center-60](../images/cluster_prep12.png)
+
+##`=IF(V2="West",1,0)`
+
+
+
 
 ---
 
 #Inspirational Thought
 <!-- ![img-right-30](../images/algo_book.png) -->
-> ##“The validation of clustering structures is the most difficult and frustrating part of cluster analysis. Without a strong effort in this direction, cluster analysis will remain a black art accessible only to those true believers who have experience and great courage.”
+> ##The validation of clustering structures is the most difficult and frustrating part of cluster analysis. 
 > ###Algorithms for Clustering Data, Jain and Dubes
-
-
----
-
-#Unsupervised Learning
-
-[![img-center-90](http://www.dumpaday.com/wp-content/uploads/2012/12/funny-quotes-i-know-i-am-unsupervised.jpg)](http://www.dumpaday.com/funny-pictures/funny-pictures-of-the-day-47-pics/attachment/funny-quotes-i-know-i-am-unsupervised/)
-
----
-
-#Unsupervised Learning
---
-
-+ Finding hidden structure in unlabeled data
---
-
-+ Don’t know the target variable we’re trying to predict
---
-
-+ Allow the algorithm to decide what value to give the data
---
-
-+ Requires much more tuning and development
---
-
-+ No good way of measuring success
 
 
 ---
