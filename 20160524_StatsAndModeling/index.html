@@ -34,13 +34,49 @@ class:center,middle
 ---
 
 #Goals
+--
+
 + Review descriptive statistics
+--
+
 + Review how to calculate descriptive statistics in Excel
+--
+
 + Review correlations and calculating coefficients of correlation in Excel
+--
+
 + Review linear regression and calculate best fit line in Excel
+--
+
 + Discuss supervised and unsupervised learning
-+ Introduce the concept of decision modeling and demonstrate decision modeling in Excel
+--
+
 + Introduce the concept of clustering and demonstrate clustering in Excel
+
+---
+
+#Outcomes
+--
+
++ You will be more familiar with descriptive statistics and how to calculate them in Excel
+--
+
++ You will be more familiar with coefficients of correlation and how to calculate them in Excel
+--
+
++ You will better understand linear regression and how to calculate a line of best fit in Excel
+
+---
+
+#Outcomes
++ You will better understand supervised and unsupervised learning
+--
+
++ You will better understand the concept of distance and similarity in machine learning
+--
+
++ You will better understand clustering and how to cluster features in Excel
+
 
 ---
 
@@ -171,7 +207,7 @@ By Cmglee (Own work) [<a href="http://creativecommons.org/licenses/by-sa/3.0">CC
 + The most frequent value in a dataset
 --
 
-+ Often used for categorical data
++ Not often used
 --
 
 ![img-center-50](../images/mode.png)
@@ -193,7 +229,7 @@ By Cmglee (Own work) [<a href="http://creativecommons.org/licenses/by-sa/3.0">CC
 + Median is better when there are extreme outliers
 --
 
-+ Mode is used when the data is categorical (as opposed to numeric)
++ Mode is used to describe the most frequent value
 
 ---
 
@@ -636,20 +672,30 @@ class:middle,center
 
 --
 
-###Recycling Rate = 0.0000001869 * MedianIncome + 0.07480414
+###RecyclingRate = 0.0000001869 * MedianIncome + 0.07480414
+---
+
+#What is this telling us?
+###RecyclingRate = 0.0000001869 * MedianIncome + 0.07480414
+--
+
++ Every dollar increase in median income will increase the recycling rate by about 0.0000001869
+--
+
++ If the median income was zero, the recycling rate would be about 0.07480414
 
 ---
 
 class:center,middle
 #We've created a model to make predictions!
-#&nbsp;
+##&nbsp;
 #&nbsp;
 
 ---
 
 class:center,middle
 #We've created a model to make predictions!
-#&nbsp;
+##&nbsp;
 #The predictions are just not very good
 
 ---
@@ -675,8 +721,32 @@ class:center,middle
 ---
 
 #Multiple Linear Regression
-![img-center-60](../images/mlr.jpg)
-Source: http://gerardnico.com/wiki/data_mining/multiple_regression [CC Attribution-Noncommercial-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+--
+
++ We can perform a regression using multiple variables
+--
+
++ Two or more independent variables 
+--
+
++ One dependent variable
+--
+
++ The best fit line becomes a plane
+--
+
++ Multiple linear regression in Excel is possible using the same method we just used
+--
+
+######http://cameron.econ.ucdavis.edu/excel/ex61multipleregression.html
+
+---
+
+#Multiple Linear Regression
+
+![img-center-55](../images/mlr.jpg)
+
+#####Source: http://gerardnico.com/wiki/data_mining/multiple_regression [CC Attribution-Noncommercial-Share Alike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 ---
 
@@ -691,8 +761,14 @@ Source: http://gerardnico.com/wiki/data_mining/multiple_regression [CC Attributi
 ---
 
 #Types of Supervised Learning Algorithms
+--
+
++ Linear regression
+--
+
 + Decision trees
-+ Support Vector Machines (SVMs)
+--
+
 + Neural Networks
 
 ---
@@ -854,7 +930,7 @@ http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-f
 ![img-center-80](../images/cities_mapped.png)
 
 --
-###Each city has a location in space based on their attributes
+###Each city has a location in space based on their attributes<br>Based on their [Percentile Rank](https://support.office.com/en-us/article/PERCENTRANK-function-f1b5836c-9619-4847-9fc9-080ec9024442)
 
 ---
 
@@ -978,7 +1054,7 @@ class:center, middle
 
 class:center, middle
 #Let's cluster some cities
-##Disclaimer: I don't think these settings are optimal for analyzing this dataset, but they demonstrate the principles I'm trying to show you
+##Disclaimer: I don't think these features are optimal for analyzing this dataset, but they demonstrate the principles I'm trying to show you
 
 ---
 
@@ -1149,14 +1225,77 @@ Notice we're leaving one out (Mayor is a Democrat)
 ---
 
 #Calculate the minimum distance
+![img-center-70](../images/cluster_prep16.png)
 
+##`=MIN(H15:H19)`
 ---
 
 #Select the assigned cluster
+![img-center-70](../images/cluster_prep17.png)
+
+##`=MATCH(H20,H15:H19,0)`
+###[MATCH Function](https://support.office.com/en-US/article/MATCH-function-E8DFFD45-C762-47D6-BF89-533F4A37673A) (finds the cluster with the shortest distance)
 
 ---
 
-#Calculate the total distance
+#Copy and drag across all the cities
+![img-center-50](../images/cluster_prep18.png)
+--
+
++ Check that all the cluster distances are the same for a city
+--
+
++ Every city should be assigned to cluster 1
+
+---
+
+#Calculate the sum of the minimum distances
+![img-left-48](../images/cluster_prep19.png)
+![img-right-48](../images/cluster_prep20.png)
+#&nbsp;
+<br>
+<br>
+<br>
+<br>
++ This is what we want to minimize
+--
+
++ Anyone want to figure this out by hand?
+
+---
+
+#Quick Recap
+--
+
++ We created 13 features for 286 cities
+--
+
++ We created a matrix for those values
+--
+
++ We setup Excel to calculate the distance from each city to the cluster centers (initially 0,0)
+--
+
++ We calculate the assigned cluster
+--
+
++ We summed the minimum distance into a total distance measure
+
+---
+
+#Next Steps
+--
+
++ We use Excel to find the minimum total distance by adjusting the center points of the clusters
+--
+
++ We have to tell Excel where the values are
+--
+
++ We have to set a simple constraint
+--
+
++ We then just let it do it's thing
 
 ---
 
@@ -1168,7 +1307,7 @@ Notice we're leaving one out (Mayor is a Democrat)
 
 ---
 
-#Check the results
+#Analyze the results
 
 ---
 
