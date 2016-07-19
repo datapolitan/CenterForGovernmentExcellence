@@ -54,6 +54,188 @@ class:center,middle
 
 ---
 
+#10 Min Break
+
+---
+
+#Introduction to APIs
+--
+
++ Application Program Interface (API)
+--
+
++ A tool for making a website's data digestible for a computer
+
+---
+
+#API Steps
+--
+
++ Make a request
+--
+
++ Get a response
+--
+
+##&nbsp;
+
+![img-center-100](../images/api1.png)
+
+---
+
+#API Request
+--
+
++ Endpoint: http://endpoint.api.com/search?
+--
+
++ Query terms: query=search_term
+--
+
++ Authentication: client_id=123, client_secret=abc
+--
+
+#Put it all together for the request
+--
+
++ http://endpoint.api.com/search?query=search_term&client_id=123&client_secret=abc
+
+---
+
+#API Response
+--
+
+![img-center-90](../images/api2.png)
+--
+
+![img-center-60](../images/api3.png)
+--
+
+###This is JSON (**J**ava**S**cript **O**bject **N**otation)
+
+---
+
+#Foursquare API Request
+![img-center-80](../images/4s_api1.png)
+
+---
+
+#Foursquare API Request
+![img-center-80](../images/4s_api2.png)
+
+--
+
+###Endpoint
+--
+
++ `https://api.foursquare.com/v2/venues/search?`
+
+---
+
+#Foursquare API Request
+![img-center-80](../images/4s_api3.png)
+--
+
+###Query Parameters
+--
+
++ `ll=40.7037253789768,-74.0079939173954`
+--
+
++ `radius=100`
+--
+
++ `limit=50`
+
+---
+
+#Foursquare API Request
+![img-center-80](../images/4s_api4.png)
+
+---
+
+#Foursquare API Request
+![img-center-80](../images/4s_api4.png)
+
+###Authentication (optional in some cases)
+--
+
++ `client_id=TQTH2POSXDUDYOHKHXM0VKDRCBSSYAFUWMVSWBCI10URJBTR`
+--
+
++ `client_secret=F3TEHU5APOLSMLSJZYZYUV1SOL5V0V2HUS150YXGTXFPINGS`
+--
+
++ `v=20140609`
+
+---
+
+#API Response
+![img](../images/4s_api_resp.png)
+
+---
+
+class:center,middle
+#Questions?
+<!-- ![img](../images/Batman-and-Robin-Running_meme.png)
+###https://developer.foursquare.com/docs/venues/search 
+ -->
+---
+
+#Let's do this
+##https://foursquare.com/developers/apps  
++ Register for an account (if you don’t have one already)
++ Create an application
++ Provide a URL (`http://www.jhu.edu` works just fine)
++ Get your client ID and client secret
+
+
+
+---
+
+#Some Important Terms
+---
+
+#Homeowner Vacancy Rate
+> The homeowner vacancy rate is the proportion of the homeowner housing inventory which is vacant for sale.  It is computed by dividing the number of vacant units for sale only by the sum of owner-occupied units and vacant units that are for sale only, and then multiplying by 100.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6629)
+
+---
+
+#Rental Vacancy Rate
+> The proportion of the rental inventory which is vacant for rent.  It is computed by dividing the number of vacant units for rent by the sum of the renter‑occupied units and the number of vacant units for rent, and then multiplying by 100.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=7019)
+
+---
+
+#Contract Rent
+> The monthly rent agreed to or contracted for, regardless of any furnishings, utilities, fees, meals, or services that may be included. For vacant units, it is the monthly rent asked for the rental unit at the time of interview.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6525)
+
+---
+
+#Gross Rent
+> The amount of the contract rent plus the estimated average monthly cost of utilities (electricity, gas, and water and sewer) and fuels (oil, coal, kerosene, wood, etc.) if these are paid for by the renter (or paid for the renter by someone else). Gross rent is intended to eliminate differentials which result from varying practices with respect to the inclusion of utilities and fuels as part of the rental payment.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6613)
+
+---
+
+#Monthly Housing Costs as a % of Income
+> The data for monthly housing costs as a percentage of household income are developed from a distribution of “Selected Monthly Owner Costs as a Percentage of Household Income” for owner-occupied and “Gross Rent as a Percentage of Household Income” for renter-occupied units.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6823)
+
+---
+
+#Aggregates
+> The sum of the values for each of the elements in the universe.  For example, aggregate household income is the sum of the income of all households in a given geographic area.  Aggregates are frequently used in computing mean values (mean equals aggregate divided by universe count).
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6183)
+
 ---
 
 #Thank You
