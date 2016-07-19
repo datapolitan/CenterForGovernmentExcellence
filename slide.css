@@ -239,6 +239,10 @@ blockquote p {
   font-size:2em;
 }
 
+blockquote.small {
+  font-size:1em;
+}
+
 code, tt {
   margin: 0 2px;
   padding: 0 5px;
@@ -284,3 +288,31 @@ p.footer{
   bottom:0px;
   font-size: 0.4em;
 }
+.red {
+  color: red;
+}
+.yellow {
+  color: yellow;
+}
+.orange {
+  color: orange;
+}
+.green {
+  color: green;
+}
+.blue {
+  color: blue;
+}
+.purple {
+  color: #800080;
+}
+.pink {
+  color: pink;
+}
+.brown {
+  color: brown;
+}
+.gray {
+  color: gray;
+}
+

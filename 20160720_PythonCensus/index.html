@@ -31,23 +31,16 @@ class:center,middle
 ---
 
 #Goals
-+ Describe the basic syntax and usage of Python 3 for data analysis
-+ Introduce key packages for Python to perform data analysis, including [pandas](http://pandas.pydata.org/), [requests](http://docs.python-requests.org/en/master/), and the [census](https://github.com/sunlightlabs/census)
 + Introduce application programming interfaces (APIs) and their use in data analysis
 + Discuss the various products released by the US Census Bureau and how to use them in analysis, with particularly focus on the [American Community Survey](https://www.census.gov/programs-surveys/acs/) 
-
----
-
-#Goals
 + Introduce the [Census APIs](http://www.census.gov/data/developers/data-sets.html) and practice accessing ACS data via the API to perform simple analysis
 + Practice using the Census APIs to reproduce the affordability index methodology in Python
-+ Discuss key needs for a Census API wrapper to support the work of the GovEx team
 + Provide key resources for setting up Python and learning data analysis in Python 
 
 ---
 
 #Key Outcomes
-+ You will be familiar with basic syntax, data structures, and commonly used packages for data analysis in Python 3
++ You will be familiar with basic syntax, data structures, and commonly used packages for data analysis in Python
 + You will be familiar with application programming interfaces (APIs) and how to work with them using Python
 + You will be familiar with the Census API for accessing ACS data with Python
 + You will be familiar with key resources to help further your understanding of Python for data analysis
@@ -103,6 +96,7 @@ class:center,middle
 
 + Authentication: client_id=123, client_secret=abc
 --
+
 
 #Put it all together for the request
 --
@@ -194,17 +188,263 @@ class:center,middle
 #Let's do this
 + We're going to query [NYC's 311 portal](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9) for a day's worth of noise complaints
 + Figure out the endpoint, query parameters, and quirks of the [SoDA API](https://dev.socrata.com/consumers/getting-started.html)
-
----
-
-#10 Min Break
-<!-- 10:50 - 11:00 -->
++ Write the API request in your text editor and test in your browser until you get the output you want
 
 ---
 
 class:center,middle
-#Introduction to Python
+#10 Min Break
+<!-- 10:50 - 11:00 -->
+![img-center-30](http://imgs.xkcd.com/comics/api.png)
+Source: http://xkcd.com/1481/
+
+---
+
+class:center,middle
+#Introduction to [Python](#58)
 ![img-center-90](../images/python_dev.jpg)
+
+---
+
+#Python facts
+--
+
++ Comes from Monty Python and Flying Circus
+--
+
++ Very flexible and highly readable
+--
+
++ Can work on the commandline and in scripts
+--
+
++ But we're going to use a [Notebook](http://jupyter.org/)
+
+---
+
+#Do this
++ Open Anaconda and start a notebook
++ Let's learn some Python
+
+---
+
+#Important packages
++ [`requests`](http://docs.python-requests.org/en/master/)
++ [`pandas`](http://pandas.pydata.org/)
+
+---
+
+class:center,middle
+#10 Min Break
+<!-- 11:50 - 12:00 -->
+![img-center-50](http://imgs.xkcd.com/comics/python.png)
+Source: http://xkcd.com/353/
+
+---
+
+class:center,middle
+![img-center-90](../images/census_logo3.jpg)
+#Let's talk about the Census
+
+---
+
+class:center,middle
+#Some Important Ideas
+
+---
+
+#Census vs Survey
++ A census is a full accounting for every person
++ A survey is a sampling of the population
++ A full census is expensive and difficult 
++ A survey is less expensive but resulting estimates will have some inaccuracies 
+
+---
+
+#Adminstrative areas
++ Delineated by OMB
++ Generally follow administrative boundaries
++ Core-based statistical areas (CBSAs) are statistical agglomerations based on the movement of people within any given area (Metropolitan Statistical Areas)
+
+---
+
+#Adminstrative areas
+![img-center-70](../images/censusgeo.png)
+
+---
+
+#A note on ZIP Code Tabulation Areas
++ ZIP Codes and ZCTAs aren't the same thing
+[![img-center-50](http://www.unitedstateszipcodes.org/images/city-block.png)](http://www.unitedstateszipcodes.org/)
++ .red[Google ZIP codes aren't ZCTAs]
+
+---
+
+#[Decennial Census of Population and Housing](http://www.census.gov/programs-surveys/decennial-census.html)
+--
+
++ Constitutionally mandated every 10 years
+--
+
+<blockquote class="small">The actual enumeration shall be made within three years after the first meeting of the Congress of the United States, and within every subsequent term of 10 years, in such manner as they shall by law direct."<br>- The Constitution of the United States, Article I, Section 2</blockquote>
+---
+
+#[Decennial Census of Population and Housing](http://www.census.gov/programs-surveys/decennial-census.html)
++ In 2010 only the short form was administered
+--
+
++ Contains age, gender, race, ethnicity, and household status
+
+---
+
+#The American Community Survey
+--
+
++ Sample of the population conducted on an ongoing basis
+--
+
++ Replaced the long-form of the census
+--
+
++ Responses are gathered over a period of time
+--
+
++ 1-year estimates are for nation, state, and large metropolitan areas
+--
+
++ 5-year estimates go down to the block level but are only really accurate for census tracts
+--
+
++ Generally don't want to compare over-lapping 5-year estimates
+
+---
+
+#The American Community Survey
++ Contains detailed ethnic origin, immigration status, income, employment, travel to work, housing status, household composition, and cross tabulations of these values
++ Stored in sequence files of up to 256 values
++ One set of files for the estimates
++ One set of files for the margins of error
+
+---
+
+#Other Census products of note
+--
+
++ [American Housing Survey](http://www.census.gov/programs-surveys/ahs.html)
+--
+
++ [Current Population Survey](http://www.census.gov/programs-surveys/cps.html)
+--
+
++ [Economic Census](http://www.census.gov/econ/census/)
+--
+
++ [Housing Vacancy Survey](http://www.census.gov/programs-surveys/hvs.html)
+--
+
++ [Population Estimates](http://www.census.gov/programs-surveys/popest.html)
+--
+
++ [Population Projections](http://www.census.gov/programs-surveys/popproj.html)
+
+---
+
+#Other Census products of note
+--
+
++ [Census of Governments](http://www.census.gov/govs/cog/)
+--
+
++ [Annual Survey of Public Employment and Payroll](http://www.census.gov/govs/apes/)
+--
+
++ [State and Local Government Finance Snapshot](http://www.census.gov/govs/local/)
+--
+
++ [Quarterly Summary of State and Local Government Tax Revenue](http://www.census.gov/govs/qtax/)
+--
+
++ [Government Integrated Directory](http://www.census.gov/govs/www/gid2007.html)
+
+---
+
+#Universe
+--
+
+![img-center-80](../images/universe.png)
+--
+
++ Think of this like the denominator
+--
+
++ Important when generating percentages (make sure you're comparing numbers in the right universe)
+
+---
+
+#Key metrics from the affordability index
+
+
+---
+
+#Homeowner Vacancy Rate
+> The homeowner vacancy rate is the proportion of the homeowner housing inventory which is vacant for sale.  It is computed by dividing the number of vacant units for sale only by the sum of owner-occupied units and vacant units that are for sale only, and then multiplying by 100.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6629)
+
+---
+
+#Rental Vacancy Rate
+> The proportion of the rental inventory which is vacant for rent.  It is computed by dividing the number of vacant units for rent by the sum of the renter‑occupied units and the number of vacant units for rent, and then multiplying by 100.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=7019)
+
+---
+
+#Contract Rent
+> The monthly rent agreed to or contracted for, regardless of any furnishings, utilities, fees, meals, or services that may be included. For vacant units, it is the monthly rent asked for the rental unit at the time of interview.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6525)
+
+---
+
+#Gross Rent
+> The amount of the contract rent plus the estimated average monthly cost of utilities (electricity, gas, and water and sewer) and fuels (oil, coal, kerosene, wood, etc.) if these are paid for by the renter (or paid for the renter by someone else). Gross rent is intended to eliminate differentials which result from varying practices with respect to the inclusion of utilities and fuels as part of the rental payment.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6613)
+
+---
+
+#Monthly Housing Costs as a % of Income
+> The data for monthly housing costs as a percentage of household income are developed from a distribution of “Selected Monthly Owner Costs as a Percentage of Household Income” for owner-occupied and “Gross Rent as a Percentage of Household Income” for renter-occupied units.
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6823)
+
+---
+
+#Aggregates
+> The sum of the values for each of the elements in the universe.  For example, aggregate household income is the sum of the income of all households in a given geographic area.  Aggregates are frequently used in computing mean values (mean equals aggregate divided by universe count).
+
+Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6183)
+
+---
+
+#Task
++ Working in groups or alone, we're going to build a function for each of the metrics in the affordability index
++ The function is going to take in the GEOID for a city and output the metric
++ Use the [reference sheet](https://docs.google.com/spreadsheets/d/1aKTU5SW5tbZ-s6wwxjONN-sOvM5l0VY7B-HgDC79I4U/edit?usp=sharing) to find the ACS variables
+
+---
+
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+
+---
+
+class:center,middle
+<a id="python-guide"></a>
+#A guide to Python
 
 ---
 
@@ -689,95 +929,6 @@ def add(x,y):
 
 ![img-center-70](../images/add_algo7.png)
 
----
-
-#10 Min Break
-<!-- 11:50 - 12:00 -->
-
----
-
-class:center,middle
-![img-center-90](../images/census_logo3.jpg)
-#Let's talk about the Census
-
----
-
-class:center,middle
-#Some Important Ideas
-
----
-
-#Census vs Survey
-+ 
-
----
-
-#Universe
---
-
-![img-center-80](../images/universe.png)
---
-
-+ Think of this like the denominator
---
-
-+ Important when generating percentages
-
----
-
-#Homeowner Vacancy Rate
-> The homeowner vacancy rate is the proportion of the homeowner housing inventory which is vacant for sale.  It is computed by dividing the number of vacant units for sale only by the sum of owner-occupied units and vacant units that are for sale only, and then multiplying by 100.
-
-Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6629)
-
----
-
-#Rental Vacancy Rate
-> The proportion of the rental inventory which is vacant for rent.  It is computed by dividing the number of vacant units for rent by the sum of the renter‑occupied units and the number of vacant units for rent, and then multiplying by 100.
-
-Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=7019)
-
----
-
-#Contract Rent
-> The monthly rent agreed to or contracted for, regardless of any furnishings, utilities, fees, meals, or services that may be included. For vacant units, it is the monthly rent asked for the rental unit at the time of interview.
-
-Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6525)
-
----
-
-#Gross Rent
-> The amount of the contract rent plus the estimated average monthly cost of utilities (electricity, gas, and water and sewer) and fuels (oil, coal, kerosene, wood, etc.) if these are paid for by the renter (or paid for the renter by someone else). Gross rent is intended to eliminate differentials which result from varying practices with respect to the inclusion of utilities and fuels as part of the rental payment.
-
-Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6613)
-
----
-
-#Monthly Housing Costs as a % of Income
-> The data for monthly housing costs as a percentage of household income are developed from a distribution of “Selected Monthly Owner Costs as a Percentage of Household Income” for owner-occupied and “Gross Rent as a Percentage of Household Income” for renter-occupied units.
-
-Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6823)
-
----
-
-#Aggregates
-> The sum of the values for each of the elements in the universe.  For example, aggregate household income is the sum of the income of all households in a given geographic area.  Aggregates are frequently used in computing mean values (mean equals aggregate divided by universe count).
-
-Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6183)
-
----
-
-#Task
-+ Working in groups or alone, we're going to build a function for each of the metrics in the affordability index
-+ The function is going to take in the GEOID for a city and output the metric
-+ Use the [reference sheet](https://docs.google.com/spreadsheets/d/1aKTU5SW5tbZ-s6wwxjONN-sOvM5l0VY7B-HgDC79I4U/edit?usp=sharing) to find the ACS variables
-
----
-
-#Thank You
-+ [richard@datapolitan.com](mailto:richard@datapolitan.com)
-+ http://blog.datapolitan.com
-+ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
 
 
    </textarea>
