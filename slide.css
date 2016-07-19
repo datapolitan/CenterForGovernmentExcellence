@@ -229,14 +229,14 @@ blockquote {
 blockquote:before {
   color: #ccc;
   content: open-quote;
-  font-size: 6em;
+  font-size: 4em;
   line-height: 0.1em;
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
 blockquote p {
   display: inline;
-  font-size:3em;
+  font-size:2em;
 }
 
 code, tt {
