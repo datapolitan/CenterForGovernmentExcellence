@@ -61,6 +61,12 @@ class:center,middle
 
 ---
 
+#Getting Started - Download Python
++ https://www.continuum.io/downloads
++ Select Python 3.5 ([it's the right thing to do](https://pythonclock.org/))
+
+---
+
 #Introduction to APIs
 --
 
@@ -186,20 +192,537 @@ class:center,middle
 ---
 
 #Let's do this
-+ We're going to query NYC's 311 portal for a day's worth of noise complaints
-+ Figure out the 
++ We're going to query [NYC's 311 portal](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9) for a day's worth of noise complaints
++ Figure out the endpoint, query parameters, and quirks of the [SoDA API](https://dev.socrata.com/consumers/getting-started.html)
 
 ---
 
 #10 Min Break
+<!-- 10:50 - 11:00 -->
 
 ---
 
+class:center,middle
 #Introduction to Python
+![img-center-90](../images/python_dev.jpg)
 
 ---
 
-#Some Important Terms
+class:middle,center
+#Data structures
+
+---
+
+#What is a data structure?
+--
+
++ A way of organizing data in a computer program
+--
+
++ The method of organizing data differs across types, allowing for different applications
+--
+
++ Important to use the right data structure for the proper task
+
+---
+
+#Algorithms and Data Structures
+![img-center-90](../images/algo_ds.png)
+
+---
+
+class:center,middle
+#Data structures in Python
+##How many can you name?
+
+---
+
+#Lists
+--
+
++ The most versatile data structure in Python
+--
+
++ Can contain multiple data types
+--
+
++ Can be sliced or added to
+--
+
++ Are mutable (can be changed)
+--
+
++ Access individual items by index
+
+--
+
+![img-center-40](../images/list1.png)
+
+---
+
+#List functions
+--
+
++ append(_object_) - add object to list
+--
+
++ extend(_list_) - extend original list with elements of specified in list
+--
+
++ insert(_index, object_) - insert object at specified index
+--
+
++ pop(_[index]_) - pop element from list at index and return (default to last value in list)
+--
+
++ remove(_value_) - delete first occurrence of value from list (no return)
+
+---
+
+#List functions
++ reverse - reverse the order of the list in place
+--
+
++ sort() - sort the list
+--
+
++ count(_value_) - count number of occurrences of value
+--
+
++ index(_value_) - find index of first value and return 
+
+--
+
+##For more information, see [the documentation ](https://docs.python.org/2/library/functions.html#list)
+
+---
+
+#When to use a list
+--
+
++ When order matters
+--
+
++ When you can look up the value using a simple numerical index
+--
+
++ When your data might be changed, removed, or extended
+--
+
++ When your data doesn’t need to be unique
+
+---
+
+#Sets
+--
+
++ An unordered collection with no duplicate values
+--
+
++ Created using the keyword “set”
+--
+
++ More limited in the types of objects that can be included (stick with basic types)
+--
+
++ Think of it like a bag of things you toss values into without needing to get them out in any order
+
+--
+
+```python
+s = set("lede algorithms")
+print(s)
+{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
+```
+
+---
+
+#When to use sets
+--
+
++ When you only need unique values
+--
+
++ When the data types you’re working with are relatively basic (hashable)
+--
+
++ When your data changes
+--
+
++ When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
+
+---
+
+#Set example
+```python
+s = set("lede algorithms")
+print(s)
+{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
+
+c = set("columbia")
+print(c)
+{'a', 'b', 'c', 'i', 'l', 'm', 'o', 'u'}
+
+print(c - s)
+{'c', 'b', 'u'}
+```
+
+---
+
+#Set functions
+--
+
++ `add(value)` - adds value to set
+--
+
++ `remove(value)` - removes the value; if not present raises key error
+--
+
++ `discard(value)` - discards the value if present in the set
+--
+
++ `pop()` - removes an arbitrary set element
+--
+
++ use `for` loop to access all the elements (can't index)
+
+---
+
+#Tuples
+--
+
++ Immutable (unchangable) data structure similar to a list
+--
+
++ Can contain elements of different types (don’t need to be hashable)
+
+--
+
+![img-center-60](../images/tuple1.png)
+
+---
+
+#When to use tuples
+--
+
++ When your data doesn’t change
+--
+
++ When performance is important (tuples provide better performance because of their immutability)
+
+---
+
+#Dictionaries
+--
+
++ Stores data in key-value pairs
+--
+
++ Provides lookup based on custom keys (instead of numerical indexes)
+--
+
++ Keys must be unique
+
+--
+
+![img-center-100](../images/dict1.png)
+
+---
+
+#When to use a dictionary
+--
+
++ When you need to lookup values by a custom key
+--
+
++ When you need a fast way to lookup values
+--
+
++ When your data needs to be modified
+
+---
+
+#Things to remember with a dictionary
+--
+
++ Key-value pairs aren’t stored in order (use `collections.OrderedDict` if you need to key order is important)
+--
+
++ `collections.defaultdict` is a more flexible implementation for creating a dictionary and adding values
+
+--
+
+##For more information, [check this out](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
+
+---
+
+#Control Statements
+--
+
++ Manages order of program operation
+--
+
++ Helps program make a decision based on conditions
+--
+
++ Any computable operation can be replicated with a mix of three control statements (sequence, selection, and iteration)
+
+---
+
+#Sequence
+--
+
++ The order of functions in a program
+--
+
++ Most basic form of control flow
+--
+
++ Basically the thing you've been doing this whole time
+
+---
+
+#Conditional statement (selection)
+--
+
++ Code block only executes if some logical test is met
+--
+
++ Logical test can be as simple or complex as necessary
+--
+
++ Uses [Boolean logic](http://learnpythonthehardway.org/book/ex28.html)
+
+---
+
+#Conditional statement in Python (selection)
+
++ `if <logical test>:` code executes only if the logical test is `True` 
+--
+
++ `elif <logical test>:` tests for an additional condition (can have an unlimited number)
+--
+
++ `else:` optional default if none of the other tests are true
+--
+
+```python
+temp = 70
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+---
+
+#Conditional statement in Python (selection)
++ Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#Conditional statement in Python (selection)
++ This will have a very different result
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+if temp < 65:
+        print("It's cold!")
+if temp > 100:
+        print("It's really hot")
+if temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#For Loops (iteration)
+--
+
++ Loops through a set sequence of values
+--
+
++ Assign a temporary variable that takes on the element from the sequence
+--
+
++ Temporary variable used within the body of the loop
+--
+
++ Temporary variable is reassigned with next value from sequence
+--
+
+```python
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+        print(w)
+```
+
+---
+
+#While Loops (iteration)
++ Loops until a guard condition is met
+--
+
+```python
+n = 0
+while n < 5:
+        n += 1
+print(n)
+```
+--
+
++ What happens if I forgot the `n += 1`?
+--
+
+![img-center-70](http://i.giphy.com/HPASxeEylfHA4.gif)
+
+---
+
+#While Loops (iteration)
++ Use when the number of iterations is unknown
+--
+
++ Helps ensure a condition or variable state is achieved before moving on with code execution
+
+---
+
+#Functions
+--
+
++ Block of organized, reusable code
+--
+
++ Ideally perform a single action
+--
+
++ Make your code more modular
+
+---
+
+#When do I write a function?
+--
+
++ If you find yourself repeating the same code sequence, it’s time to write a function
+--
+
++ [**D**on’t **R**epeat **Y**ourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+--
+
++ Helps make your code more readable and easier to maintain
+
+---
+
+#Function Example
++ Try this
+
+```python
+def add(x,y):
+  return x + y
+```
+
+--
+
+![img-center-70](../images/add_algo0.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+--
+
+![img-center-70](../images/add_algo2.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo3.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo4.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo5.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo6.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo7.png)
+
+---
+
+#10 Min Break
+<!-- 11:50 - 12:00 -->
+
+---
+
+class:center,middle
+![img-center-90](../images/census_logo3.jpg)
+#Let's talk about the Census
+
+---
+
+class:center,middle
+#Some Important Ideas
+
+---
+
+#Census vs Survey
++ 
+
+---
+
+#Universe
+--
+
+![img-center-80](../images/universe.png)
+--
+
++ Think of this like the denominator
+--
+
++ Important when generating percentages
+
 ---
 
 #Homeowner Vacancy Rate
@@ -241,6 +764,13 @@ Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6823)
 > The sum of the values for each of the elements in the universe.  For example, aggregate household income is the sum of the income of all households in a given geographic area.  Aggregates are frequently used in computing mean values (mean equals aggregate divided by universe count).
 
 Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6183)
+
+---
+
+#Task
++ Working in groups or alone, we're going to build a function for each of the metrics in the affordability index
++ The function is going to take in the GEOID for a city and output the metric
++ Use the [reference sheet](https://docs.google.com/spreadsheets/d/1aKTU5SW5tbZ-s6wwxjONN-sOvM5l0VY7B-HgDC79I4U/edit?usp=sharing) to find the ACS variables
 
 ---
 
