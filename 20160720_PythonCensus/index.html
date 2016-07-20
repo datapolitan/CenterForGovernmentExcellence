@@ -280,6 +280,16 @@ class:center,middle
 
 ---
 
+#We're going to be focusing on [Places](https://en.wikipedia.org/wiki/Place_(United_States_Census_Bureau))
+--
+
++ Can be Incorporated Places (cities) or unincorporated Census Designated Places
+--
+
++ Hawaii and Puerto Rico have no incorporated places
+
+---
+
 #[Decennial Census of Population and Housing](http://www.census.gov/programs-surveys/decennial-census.html)
 --
 
@@ -321,8 +331,14 @@ class:center,middle
 
 #The American Community Survey
 + Contains detailed ethnic origin, immigration status, income, employment, travel to work, housing status, household composition, and cross tabulations of these values
+--
+
 + Stored in sequence files of up to 256 values
+--
+
 + One set of files for the estimates
+--
+
 + One set of files for the margins of error
 
 ---
@@ -368,6 +384,11 @@ class:center,middle
 
 ---
 
+class:center,middle
+#Data Structure
+
+---
+
 #Universe
 --
 
@@ -382,7 +403,24 @@ class:center,middle
 ---
 
 #Key metrics from the affordability index
++ Homeowner Vacancy Rate
++ Rental Vacancy Rate
++ Owner-Occupied
++ Renter-Occupied
++ Median Home Value
++ Median Mortgage Cost
++ Median Rent
 
+---
+
+#Key metrics from the affordability index
++ Owners paying >=30% of Income in Housing Costs
++ Renters paying >=30% of Income in Housing Costs
++ Unemployment Rate
++ Median Household Income
++ Mean Income
++ Total Population
++ Non-White
 
 ---
 
@@ -429,17 +467,20 @@ Source: [Census](https://ask.census.gov/faq.php?id=5000&faqId=6183)
 ---
 
 #Task
-+ Working in groups or alone, we're going to build a function for each of the metrics in the affordability index
-+ The function is going to take in the GEOID for a city and output the metric
++ Working in groups or alone, we're going to build a function for each of the metrics in the affordability index using the [ACS API](http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html)
++ The function is going to take in the state FIPs and place name for a city and output the metric
 + Use the [reference sheet](https://docs.google.com/spreadsheets/d/1aKTU5SW5tbZ-s6wwxjONN-sOvM5l0VY7B-HgDC79I4U/edit?usp=sharing) to find the ACS variables
++ 
 
----
+```python
+import requests
+url = 'http://api.census.gov/data/2013/acs5?get='
+api_key = '6122df17856235fccc7ce6a0b92b9dc8b13bddcd'
 
-#Thank You
-+ [richard@datapolitan.com](mailto:richard@datapolitan.com)
-+ http://blog.datapolitan.com
-+ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+#Example of query for Adak city, Alaska
+#http://api.census.gov/data/2014/acs5?get=NAME,B01001_001E&for=place:00065&in=state:02
 
+```
 ---
 
 class:center,middle
@@ -928,6 +969,13 @@ def add(x,y):
 ![img-center-70](../images/add_algo1.png)
 
 ![img-center-70](../images/add_algo7.png)
+
+---
+
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
 
 
 
