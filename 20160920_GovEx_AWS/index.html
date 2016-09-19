@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Statistics and Modeling with City Data - Center for Government Excellence</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Statistics and Modeling with City Data</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+
+---
+
+class:center,middle
+# AWS for Data Ingest
+
+- - - 
+
+## Richard Dunks
+### Follow along at: http://bit.ly/GovEx-Stats
+
+![img-center-40](../images/datapolitan.png)
+
+---
+
+# Goals
++ Review the architecture for data ingest
++ Practice uploading data using the portal
++ Practice logging in and downloading data from the portal
++ Review best practices with data from the portal
++ Discuss future work on the data ingest portal and the data analysis stack
+
+---
+
+# Outcomes
++ You will understand the AWS architecture
++ You will practice the data upload and download process using the website and AWS console
++ You will have provided feedback on the process and submitted any necessary [Github issues for problems](https://github.com/govex/aws/issues)
++ You will be familiar with the tech stack plans and provided feedback for future development
+
+---
+
+# Overview
+![img-center-80](../images/arch_overview.png)
+
+---
+
+# Upload
++ Cities go to the [webpage](https://govex-aws.herokuapp.com/) (go there now)
++ The page may take a moment to fire up
+![img-center-60](http://railsware.com/blog/wp-content/uploads/2012/12/routing_mesh.jpg)
+
+---
+
+# File upload exercise
++ Find a file on your desktop of any size and attempt to upload it to S3
++ The bigger the better (you're helping us test the limits of the application)
++ Give your thoughts on the process
+
+---
+
+# Hand off to S3
++ Heroku application writes the file to S3
++ Write-only permission
++ Can't see contents of bucket
++ If file names are the same, will overwrite file
++ Will appear in the S3 folder
+
+
+---
+
+# Logging into S3
++ You should already have [an account](https://govex.signin.aws.amazon.com/console) (if not, we'll set that up now)
++ Will be setting up multi-factor authentication (MFA) soon
++ Navigate to the S3 console
++ Find the bucket (`govex-data-staging1`)
+
+---
+
+# Downloading data
++ The data hasn't been virus-scanned
++ .red[Make sure you do that]
++ [Download JHU Anti-virus](http://www.it.johnshopkins.edu/restricted/antivirus/index.html)
++ Scan the file
+
+---
+
+class:center,middle
+# What do you think?
+
+---
+
+#
+
+---
+
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+
+
+   </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+      // {
+      //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
