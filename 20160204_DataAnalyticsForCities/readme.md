@@ -14,4 +14,4 @@ Contains the material for the 4 February training with members of the [Center fo
 + You will be familiar with fundamental best practices for visualizing data in Excel
 + You will understand the key challenges city employees face in using Excel for analysis
 
-See the slides [here](http://www.datapolitan.com/CenterForGovernmentExcellence).
+See the slides [here](http://www.datapolitan.com/CenterForGovernmentExcellence/20160204_DataAnalyticsForCities).
