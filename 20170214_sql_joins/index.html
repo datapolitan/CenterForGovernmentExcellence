@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapping with SQL - Center for Government Excellence</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Mapping with SQL - Center for Government Excellence</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+
+---
+
+class:center,middle
+# Mapping in SQL
+
+- - - 
+
+## Richard Dunks
+### Follow along at: 
+
+![img-center-40](../images/datapolitan.png)
+
+---
+
+# Goals
+--
+
++ Introduce basic spatial concepts
++ Introduce the use of a spatial database
++ Introduce SQL for querying data, including spatial data
+
+---
+
+# Outcomes
+--
+
++ You will better understand joining data using SQL
+--
+
++ 
+
+---
+
+---
+
+class:center,middle
+#Basic Spatial Elements
+
+---
+
+#Points  
+![img-center-50](images/point_feature.png)
+####Source: http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/vector_data.html#overview
+
+---
+
+#Lines
+![img-center-50](images/polyline_feature.png)
+####Source: http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/vector_data.html#overview
+
+---
+
+#Polygons
+![img-center-50](images/polygon_feature.png)
+####Source: http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/vector_data.html#overview
+
+---
+
+class:center,middle
+# So What is a GIS?
+
+---
+
+#Geographic Information System (GIS)
+> Any system for capturing, storing, checking, and displaying data related to positions on the Earth's surface
+
++ [National Geographic Education Encyclopedia](http://education.nationalgeographic.org/encyclopedia/geographic-information-system-gis/)
+
+---
+
+#Or more simply
+
+> In a GIS, you connect _**data**_ with _**geography**_.
+
++ [GISgeography.com](http://gisgeography.com/what-gis-geographic-information-systems/)
+
+---
+
+#Geographic Information Systems (GIS)
+--
+
++ Create interactive queries (user-created searches)
+--
+
++ Analyze spatial information
+--
+
++ Edit data in maps
+--
+
++ Present the results of all these operations
+
+---
+
+class:center,middle
+#Let's make a map
+![img-center-80](images/p1_finished.png)
+---
+
+#Base Maps 
+--
+
++ Adding base maps will give your map context
+--
+
++ In QGIS, you need a plugin to use base maps
+--
+
++ There are several, but we're only going to use one of them
+
+---
+
+#Base Map Plugin
++ From the Plugins menu, select "Manage and Install Plugins"
+
+![img-center-60](images/basemap2.png)
+
+---
+
+#Base Map Plugin
+
++ Search for the QuickMapServices plugin and install it
+
+![img-center-75](images/basemap3_box.png)
+
+---
+
+#Setting Up QuickMapServices Plugin
++ Go to the Settings Menu
+![img-center-80](images/basemap4.png)
+
+---
+
+#Setting Up QuickMapServices Plugin
++ Get the contributed packs
+![img-center-80](images/basemap5_box.png)
+
+---
+
+#Setting Up QuickMapServices Plugin
+![img-right-45](images/basemap6_trim.png)
++ Revel in all the beautiful base maps
+
+---
+
+#Select a base map from the list
+![img-center-80](images/p1_basemap.png)
+
+---
+
+#Adding Layers
+![img-center-100](images/map1.png)
+####Image Source: http://www.geocontrolling.com/co-je-gis.htm
+
+---
+
+#Shapefiles
+--
+        
++ Basic file for storing map elements
+--
+
++ Stores spatial data, like points, lines, and polygons
+--
+
++ Multiple files comprise a "shapefile"
+
+--
+
+![img-center-80](images/file_struct1.png)
+
+---
+
+#Download a shapefile and import
+1. [Click this link](data/boros/boros.zip) and download the file to your desktop
+2. Unzip the file
+
+
+![img-center-80](images/qgis_nav2.png)
+---
+
+#Import a shapefile
+
+![img-center-50](images/qgis_nav3_box.png)
+
+![img-center-55](images/qgis_nav4.png)
+
+---
+
+#Import a shapefile
+![img-center-80](images/p1_boro_shp.png)
+
+---
+
+class:center,middle
+#Adding a CSV file
+
+---
+
+#What is a CSV?
+--
+
+![img-center-100](images/csv_311_ex.png)
+
+---
+
+#Import a CSV
++ [Right click this link](data/dot_311_20160201_20160207.csv)
++ Select "Save link as" 
++ Save the file (`dot_311_20160201_20160207.csv`) to your desktop
+
+---
+
+#Adding CSV Data
+![img-center-70](images/add_csv1.png)
+
+![img-center-90](images/add_csv2_box_crop.png)
+
+---
+
+#Adding CSV Data
+![img](images/p1_csv_box.png)
+
+---
+
+#Adding CSV Data
+![img](images/add_csv5.png)
+
+---
+
+class:center,middle
+#What is a Coordinate Reference System?
+
+---
+
+# Projections
+--
+
++ No one's favorite part of GIS
+--
+
++ But a necessary part of it nonetheless
+--
+
++ Convert points on the 3-dimensional Earth (**latitude** and **longitude**) to x and y coordinates on a 2-dimensional map
+
+--
+
+![img-center-85](images/projections-orange.jpg)
+
+[Digital Coast Geozone](https://geozoneblog.wordpress.com/2012/05/22/happy-birthday-mercator/)
+
+---
+
+#Projections
++ Every projection distorts some part of your map
+
+![img-center-50](images/projections-faces.png)
+
+[FlowingData](http://flowingdata.com/2014/01/13/map-projections-illustrated-with-a-face/)
+
+---
+
+#Projections
+
++ For the most part we will work in **WGS 84** (latitude and longitude)
+--
+
++ In NYC, we use a more accurate projection **NY State Plane/Long Island Zone**
+![img-right-60](images/projections_NYSplane.png)
+
+######Source: https://alidade.wikispaces.com/New+York+SPCS+Zones
+---
+
+# Projections
++ Identified by unique IDs that make it easier to talk about them
+--
+
++ WGS 84 is referred to as **EPSG:4326**
+--
+
++ State Plane Long Island is referred to as **EPSG:2263**
+--
+
+## Remember these two and you should be set
+
+---
+
+#Adding CSV Data
+![img-center-55](images/add_csv6_box.png)
+
+---
+
+#Adding CSV Data
+![img-center-80](images/p1_points_poly.png)
+
+---
+
+class:center,middle
+#Styling the map
+
+---
+
+#Attribute Table (Right click on layer)
+![img-left-40](images/qgis_nav6_crop.png)
+![img-right-55](images/qgis_nav7.png)
+
+---
+
+<!-- Styling -->
+#Styling Features
++ Right-click the layer and select the Properties option
++ Select "Style," and finally, choose "Categorized":
+        
+![img-90](images/styling1.png)
+
+---
+
+#Styling Features
++ Select the column that has the data you want to style:
+    
+![img-center-60](images/styling2.png)
+
+![img](images/styling3_box.png)
+
+---
+
+#Styling Features
+![img](images/styling4_box.png)
+
+---
+
+#Styling Features
+![img-center-80](images/p1_style.png)
+
+---
+
+#Your turn
++ Style the points and polygons however you'd like
++ Try adding labels to the data
++ Get familiar with the interface
+
+---
+
+class:middle,center
+#5 Min Break
+![img-center-50](https://scontent-lga3-1.cdninstagram.com/t51.2885-15/s480x480/e35/12277599_1650021651913770_1349530766_n.jpg)
+
+###Source: https://www.instagram.com/p/-0QkhTj82O/
+---
+
+class:center,middle
+#Spatial Databases
+
+---
+
+#What is a database?
+
+--
+
+> An organized collection of data.
+
+##[Wikipedia](https://en.wikipedia.org/wiki/Database)
+---
+
+#What is a database?
+
+> A set of data that has a regular structure and that is organized in such a way that a computer can easily find the desired information.
+
+##[The Linux Information Project](http://www.linfo.org/database.html)
+
+---
+
+#What is a database?
+
+--
+
+![img-center-90](images/databases.jpg)
+#####Source: http://blog.hackerrank.com/new-domain-tuesday-hackerrank-reveals-data-structure-database-sql-challenges/
+
+---
+
+#What is a database?
++ Another source of data
+--
+
++ A program that often runs on a computer other than the one you're using (a server)
+--
+
++ You can connect to databases through many types of software, including QGIS
+
+---
+
+#What is a spatial database?
+--
+
++ A database that stores spatial features
+--
+
++ Optimized for processing spatial data, especially location-aware queries
+--
+
++ Both a storage and analysis tool
+--
+
+![img](http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/_images/spatialmojo.png)
+
+####Source: http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/postgis/spatialdbs.html
+
+---
+
+#Let's connect to a spatial database
+![img-center-70](images/add_pg_layer1.png)
+
+--
+
+![img-center-65](images/add_pg_layer2_box_crop.png)
+
+---
+
+#Let's connect to a spatial database
+![img-right-40](images/add_pg_layer3_box.png)
++ Name: (Whatever you'd like)
++ Host: `training.c1erymiua9dx.us-east-1.rds.amazonaws.com`
++ Port: `5432`
++ Database: `training`
++ Username: `dot_student`
++ Password: `qgis`
+--
+
+![img-center-35](images/add_pg_layer4.png)
+
+---
+
+#Let's connect to a spatial database
+![img-left-45](images/add_pg_layer5_box.png)
+![img-right-45](images/add_pg_layer6_box.png)
+####&nbsp;
+####&nbsp;
+####&nbsp;
+####&nbsp;
+####&nbsp;
+####&nbsp;
+####&nbsp;
+###Now it's just like any other data source we've been using
+
+---
+
+#Exercise 1 - Selecting Injuries in a Borough
+1. Add the `injuries` table to your map
+2. Right click and select "Filter..."
+![img-right-40](images/filter_pg_layer1.png)
+3. Select `borough` and query for your borough
+
+#####&nbsp;
+![img-left-60](images/filter_pg_layer2_crop.png)
+
+---
+
+#Selecting Injuries in a Borough
+![img-center-60](images/filter_pg_layer3.png)
+
+---
+
+#Save Selection As Shapefile
+![img-left-40](images/save_filter1.png)
+![img-right-55](images/save_filter2.png)
+
+---
+
+#Let's talk datatypes
+
+--
+
+![img-center-80](images/qgis_nav7.png)
+
+--
+
++ In the attribute table you will usually see *text*, *numbers*, and *dates*
+
+---
+
+#Let's talk datatypes
+
+![img-center-80](images/qgis_attribute_table_number.png)
+
+--
+
+##Numbers will be right aligned
+
+---
+
+#Let's talk datatypes
+
+![img-center-80](images/qgis_attribute_table_string.png)
+
+--
+
+##Text will be left aligned
+
+---
+
+#Database datatypes
+
+--
+
++ Like attribute tables, database columns have types
+--
+
++ Numbers, text (*strings*), and dates are the main types
+--
+
++ Spatial databases add *geometry* columns
+--
+
++ Geometry columns let us map our data
+
+---
+
+#Why use a spatial database?
+
+--
+
++ One authoritative copy of data
+--
+
++ Multiple people can use and edit it at once
+--
+
++ Generally is going to be faster than using a shapefile
+
+---
+
+#Drawbacks of using a spatial database
+
+--
+
++ Not as simple as a CSV file or shapefile
+--
+
++ It takes some setup to connect to a database
+--
+
++ Need permission to connect to a database
+--
+
++ Need to know SQL to get the most out of it
+
+
+---
+
+#Thank You
++ [richard@datapolitan.com](mailto:richard@datapolitan.com)
++ http://blog.datapolitan.com
++ [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
+
+
+   </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+      // {
+      //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
