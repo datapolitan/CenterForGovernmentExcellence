@@ -439,7 +439,7 @@ class:center,middle
 
 ---
 
-#Let's connect to a spatial database
+# Let's connect to a spatial database
 ![img-center-70](images/add_pg_layer1.png)
 
 --
@@ -448,7 +448,7 @@ class:center,middle
 
 ---
 
-#Let's connect to a spatial database
+# Let's connect to a spatial database
 ![img-right-40](images/add_pg_layer3_box.png)
 + Name: (Whatever you'd like)
 + Host: `training.c1erymiua9dx.us-east-1.rds.amazonaws.com`
@@ -462,21 +462,21 @@ class:center,middle
 
 ---
 
-#Let's connect to a spatial database
+# Let's connect to a spatial database
 ![img-left-45](images/add_pg_layer5_box.png)
 ![img-right-45](images/add_pg_layer6_box.png)
-####&nbsp;
-####&nbsp;
-####&nbsp;
-####&nbsp;
-####&nbsp;
-####&nbsp;
-####&nbsp;
-###Now it's just like any other data source we've been using
+#### &nbsp;
+#### &nbsp;
+#### &nbsp;
+#### &nbsp;
+#### &nbsp;
+#### &nbsp;
+#### &nbsp;
+### Now it's just like any other data source we've been using
 
 ---
 
-#Exercise 1 - Selecting Injuries in a Borough
+# Exercise 1 - Selecting Injuries in a Borough
 1. Add the `injuries` table to your map
 2. Right click and select "Filter..."
 ![img-right-40](images/filter_pg_layer1.png)
@@ -487,18 +487,18 @@ class:center,middle
 
 ---
 
-#Selecting Injuries in a Borough
+# Selecting Injuries in a Borough
 ![img-center-60](images/filter_pg_layer3.png)
 
 ---
 
-#Save Selection As Shapefile
+# Save Selection As Shapefile
 ![img-left-40](images/save_filter1.png)
 ![img-right-55](images/save_filter2.png)
 
 ---
 
-#Let's talk datatypes
+# Let's talk datatypes
 
 --
 
@@ -510,27 +510,27 @@ class:center,middle
 
 ---
 
-#Let's talk datatypes
+# Let's talk datatypes
 
 ![img-center-80](images/qgis_attribute_table_number.png)
 
 --
 
-##Numbers will be right aligned
+## Numbers will be right aligned
 
 ---
 
-#Let's talk datatypes
+# Let's talk datatypes
 
 ![img-center-80](images/qgis_attribute_table_string.png)
 
 --
 
-##Text will be left aligned
+## Text will be left aligned
 
 ---
 
-#Database datatypes
+# Database datatypes
 
 --
 
@@ -547,7 +547,7 @@ class:center,middle
 
 ---
 
-#Why use a spatial database?
+# Why use a spatial database?
 
 --
 
@@ -561,7 +561,7 @@ class:center,middle
 
 ---
 
-#Drawbacks of using a spatial database
+# Drawbacks of using a spatial database
 
 --
 
@@ -576,6 +576,197 @@ class:center,middle
 
 + Need to know SQL to get the most out of it
 
+---
+
+# Back to databases
+
+![img-center-90](images/databases.jpg)
+
+---
+
+![img-center-80](images/paper-stack.jpg)
+
+---
+
+# You might ask:
+
+![img-right-30](images/paper-stack.jpg)
+
++ Which pages refer to properties in Brooklyn?
+--
+
++ Which pages refer to properties in Brooklyn that have been built on since 1950?
+--
+
++ What are the addresses of those properties?
+
+---
+
+# Databases are great at questions like these
+--
+
++ It's what they were made for
+--
+
++ SQL will let us ask these questions
+
+---
+
+# SQL
+--
+
++ Structured Query Language
+--
+
++ The language databases understand
+---
+
+# SQL queries
+--
+
++ Can *view* data
+--
+
++ and *change* data
+--
+
+## We're going to stick to *viewing* data
+
+---
+
+# SQL looks like:
+
+```sql
+SELECT *
+FROM injuries
+```
+--
+
++ In english: "select all the injuries"
+
+--
+
+```sql
+SELECT *
+FROM injuries
+WHERE borough = 'QUEENS'
+```
+--
+
++ In english: "select all the injuries in Queens"
+
+---
+
+# You can combine conditions
+
+```sql
+SELECT *
+FROM injuries
+WHERE borough = 'QUEENS' AND contributi = 'Fatigued/Drowsy'
+```
+
+--
+
+```sql
+SELECT *
+FROM injuries
+WHERE contributi = 'Outside Car Distraction' OR contributi = 'Fatigued/Drowsy'
+```
+
+---
+
+# This should feel pretty familiar
+--
+
+![img-center-60](images/filter1.png)
+
+---
+
+class:center,middle
+# Let's use SQL in QGIS
+
+---
+
+# DB Manager
+--
+
++ One way to see your database *connections* and *tables*
+--
+
++ Also a way to run SQL queries on your tables
+
+---
+
+# DB Manager
+--
+
+![img-center-45](images/db_manager_menu.png)
+
+---
+
+# DB Manager
+![img-center-90](images/db_manager.png)
+
+---
+
+# DB Manager
+![img-center-90](images/db_manager_schema.png)
+
+---
+
+# DB Manager
+![img-center-90](images/db_manager_injuries.png)
+
+---
+
+# DB Manager
+![img-center-90](images/db_manager_open_sql_window.png)
+
+---
+
+# DB Manager
+![img-center-90](images/db_manager_sql_window.png)
+
+---
+
+# Simple SQL Query
+![img-center-90](images/db_manager_queens.png)
+
+---
+
+# Simple SQL Query
+![img-center-90](images/db_manager_queens_execute_button.png)
+
+---
+
+# Simple SQL Query
+![img-center-90](images/db_manager_queens_execute.png)
+
+---
+
+# Add Query Result to Map
+![img-center-90](images/db_manager_queens_execute_load_new_layer_checkbox.png)
+
+---
+
+# Add Query Result to Map
+![img-center-90](images/db_manager_load_as_new_layer.png)
+
+---
+
+# Add Query Result to Map
+![img-center-90](images/db_manager_load_as_new_layer_load_button.png)
+
+---
+
+# Add Query Result to Map
+![img-center-80](images/injuries_queens.png)
+
+---
+
+# Your turn
++ Use DB Manager and SQL to select the injuries for the Bronx
++ Add the results as a layer in QGIS
 
 ---
 
