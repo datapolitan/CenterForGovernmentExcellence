@@ -780,7 +780,327 @@ class:center,middle
 
 ---
 
-# Joins in SQL
+class:center,middle
+# How Do We Do Joins in SQL?
+
+---
+
+class:center.middle
+![img-center-95](images/sql_join1.png)
+
+http://stackoverflow.com/questions/406294/left-join-and-left-outer-join-in-sql-server
+
+---
+
+# Let's Try an Example
+![img-center-60](images/borough_injury_join.png)
+
+---
+
+# Questions to Ask
++ What tables are we going to use?
+--
+<br>(`nyc_boro` and `boro_injury_count`)
+--
+
++ What kind of join do we want to do?
+--
+
++ What values are we going to join on?
+---
+
+class:center,middle
+# Try to Write the Query Yourself
+
+---
+
+# Example Query
+```sql
+SELECT b.*, bc.injury_count
+FROM nyc_boro AS b
+INNER JOIN boro_injury_count AS bc
+  ON b.borocode = bc.borough_code
+```
+--
+- - -
+```sql
+FROM nyc_boro AS b
+```
++ Using the table `nyc_boro` table, which [we're aliasing](https://www.techonthenet.com/postgresql/alias.php) as `b`
+
+---
+
+# Example Query
+```sql
+SELECT b.*, bc.injury_count
+FROM nyc_boro AS b
+INNER JOIN boro_injury_count AS bc
+  ON b.borocode = bc.borough_code
+```
+
+- - -
+```sql
+INNER JOIN boro_injury_count AS bc
+```
++ [`INNER JOIN`](http://www.postgresqltutorial.com/postgresql-inner-join/) the `boro_injury_count` table, which we're aliasing as `bc`
+
+---
+
+# Example Query
+```sql
+SELECT b.*, bc.injury_count
+FROM nyc_boro AS b
+INNER JOIN boro_injury_count AS bc
+  ON b.borocode = bc.borough_code
+```
+
+- - -
+```sql
+ON b.borocode = bc.borough_code
+```
++ We joining `borocode` from `nyc_boro` to `borough_code` from `boro_injury_count`
+---
+
+# Example Query
+```sql
+SELECT b.*, bc.injury_count
+FROM nyc_boro AS b
+INNER JOIN boro_injury_count AS bc
+  ON b.borocode = bc.borough_code
+```
+
+- - -
+```sql
+SELECT b.*, bc.injury_count
+```
++ We're selecting all the columns from `nyc_boro` and the `injury_count` column from `boro_injury_count`
+
+---
+
+#Spatial Join
+
+![img-right-30](images/join1.png)
+
+--
+
+##Point to Polygon
++ Relate points inside a polygon to that polygon (ex. count the number of points)
+
+--
+
+##Polygon to Point 
++ Points can take on value of enclosing polygon
+
+---
+
+#Spatial joins in SQL
+--
+
++ Let's do a simple points in polygon join:
+
+--
+
+```sql
+SELECT nyc_boro.*, COUNT(injuries)
+FROM nyc_boro
+INNER JOIN injuries ON ST_Within(injuries.geom, nyc_boro.geom)
+GROUP BY nyc_boro.gid
+```
+
+---
+
+#Line by line:
+
+```sql
+SELECT nyc_boro.*, COUNT(injuries)
+```
+
+##"Select all of the `nyc_boro` columns and the count of `injuries`"
+
+---
+
+#Line by line:
+
+```sql
+FROM nyc_boro
+```
+
+##"Use the `nyc_boro` table"
+
+---
+
+#Line by line:
+
+```sql
+INNER JOIN injuries ON ST_Within(injuries.geom, nyc_boro.geom)
+```
+
+##"Join with `injuries`, associate `injuries` with the `nyc_boro` they are within"
+
+---
+
+#Line by line:
+
+```sql
+GROUP BY nyc_boro.gid
+```
+
+##"Count by borough"
+
+---
+
+## All together:
+
+```sql
+SELECT nyc_boro.*, COUNT(injuries)
+FROM nyc_boro
+INNER JOIN injuries ON ST_Within(injuries.geom, nyc_boro.geom)
+GROUP BY nyc_boro.gid
+```
+
+--
+
+## More generally:
+
+```sql
+SELECT polygons.*, COUNT(points)
+FROM polygons
+INNER JOIN points ON ST_Within(points.geom, polygons.geom)
+GROUP BY polygons.unique_id
+```
+
+--
+
+### Just replace *points* and *polygons* with the table names, *unique_id* with a unique id from your polygons table
+
+---
+
+# Joining Tables in SQL
+![img-center-90](images/db_manager_join.png)
+
+---
+
+# Joining Tables in SQL
+![img-center-90](images/db_manager_join_results.png)
+
+---
+
+# Joining Tables in SQL
+![img-center-90](images/spatial_join_attribute_table.png)
+
+---
+
+# `ST_Within`
+
+--
+
++ A *spatial* SQL function
+--
+
++ Similar to other SQL conditions (`borough = 'QUEENS'`)
+--
+
++ ...but we're checking whether the geometries of one table are *within* geometries from another
+
+---
+
+# `ST_Within`
+
+![img-center-40](images/st-within.gif)
+#####Source: https://www.ibm.com/support/knowledgecenter/SSGU8G_11.50.0/com.ibm.spatial.doc/relation1033234.htm%23relation1033234
+
+---
+
+# Spatial SQL functions
+
+--
+
++ There are many more you can use
+--
+
++ For example, `ST_Crosses`:
+
+![img-center-40](images/st-crosses.png)
+
+---
+
+# Spatial SQL functions
+
+--
+
++ We're only covering `ST_Within` today
+--
+
++ But we will give you resources for finding other spatial SQL functions
+
+---
+
+class:center,middle
+# Resources for Working with Spatial Data
+
+---
+
+# Finishing
++ Add the result to the table
++ Style the values (3 classes)
+
+---
+
+class:center,middle
+#Resources
+
+---
+
+#GIS Stack Exchange
+
+![img-center-90](images/gis-stackexchange.png)
+
+[GIS Stack Exchange](http://gis.stackexchange.com/)
+
+---
+
+#Learning QGIS
+
+![img-center-40](images/learning-qgis.png)
+
+[Learning QGIS](https://www.packtpub.com/application-development/learning-qgis-20)
+
+---
+
+#QGIS Map Design
+
+![img-center-40](images/qgis-map-design.png)
+
+[QGIS Map Design](http://locatepress.com/qmd)
+
+---
+
+#PostGIS in Action
+
+![img-center-40](http://ecx.images-amazon.com/images/I/5172NoQsEcL._SX397_BO1,204,203,200_.jpg)
+
+[PostGIS in Action](http://www.postgis.us/)
+
+---
+
+#The PostGIS Documentation
+![img](images/postgis_docs.png)
+
+http://postgis.net/documentation
+
+---
+
+#The PostGIS Documentation
+[![img](images/st_within_docs.png)](http://postgis.net/docs/ST_Within.html)
+
+###They're actually really helpful
+
+---
+
+#Other Documentation
++ [QGIS online manual](http://docs.qgis.org/2.8/en/docs/)
++ [QGIS Tutorials and Tips](http://www.qgistutorials.com/en/index.html)
++ [Free and Open Source GIS Ramblings](https://anitagraser.com/)
 
 ---
 
@@ -792,11 +1112,42 @@ class:center,middle
 class:middle
 [![img-full](images/cartodb_qgis.png)](http://blog.cartodb.com/qgis-plugin/)
 
+---
+
+#Reminders
+--
+
++ Know your layer projection
+--
+
++ Always test your queries when you filter
+--
+
++ Use descriptive filenames
+--
+
++ Keep your data organized
+--
+
++ Save your work often (especially your project file)
+--
+
++ When in doubt, save, close, and restart
+
+---
+
+# Things we didn't cover
++ [Buffering](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#193)
++ [Select by Location](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#229)
++ [Heatmaps](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#380)
++ [Geocoding](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#403)
++ [Print Composer](http://www.datapolitan.com/DOT_GIS/20160428_Introduction_to_GIS_Fundamentals/#246)
 
 ---
 
 #Thank You
-+ [richard@datapolitan.com](mailto:richard@datapolitan.com)
+[![img-right-40](https://scontent-lga3-1.cdninstagram.com/l/t51.2885-15/e35/11260589_1537702966519640_1758757795_n.jpg)](https://scontent-lga3-1.cdninstagram.com/l/t51.2885-15/e35/11260589_1537702966519640_1758757795_n.jpg)
++ [richard(at)datapolitan(dot)com](mailto:richard@datapolitan.com)
 + http://blog.datapolitan.com
 + [@rdunks1](https://twitter.com/rdunks1)/[@datapolitan](https://twitter.com/Datapolitan)
 
