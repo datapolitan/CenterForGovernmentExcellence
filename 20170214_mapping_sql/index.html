@@ -980,17 +980,17 @@ FROM nyc_boro
 INNER JOIN injuries ON ST_Within(injuries.geom, nyc_boro.geom)
 ```
 
-##"Join with `injuries`, associate `injuries` with the `nyc_boro` they are within"
+## "Join with `injuries`, associate `injuries` with the `nyc_boro` they are within"
 
 ---
 
-#Line by line:
+# Line by line:
 
 ```sql
 GROUP BY nyc_boro.gid
 ```
 
-##"Count by borough"
+## "Count by borough"
 
 ---
 
@@ -1092,11 +1092,11 @@ class:center,middle
 ---
 
 class:center,middle
-#Resources
+# Resources
 
 ---
 
-#GIS Stack Exchange
+# GIS Stack Exchange
 
 ![img-center-90](images/gis-stackexchange.png)
 
@@ -1104,7 +1104,7 @@ class:center,middle
 
 ---
 
-#Learning QGIS
+# Learning QGIS
 
 ![img-center-40](images/learning-qgis.png)
 
@@ -1112,7 +1112,7 @@ class:center,middle
 
 ---
 
-#QGIS Map Design
+# QGIS Map Design
 
 ![img-center-40](images/qgis-map-design.png)
 
@@ -1120,7 +1120,7 @@ class:center,middle
 
 ---
 
-#PostGIS in Action
+# PostGIS in Action
 
 ![img-center-40](http://ecx.images-amazon.com/images/I/5172NoQsEcL._SX397_BO1,204,203,200_.jpg)
 
@@ -1128,28 +1128,28 @@ class:center,middle
 
 ---
 
-#The PostGIS Documentation
+# The PostGIS Documentation
 ![img](images/postgis_docs.png)
 
 http://postgis.net/documentation
 
 ---
 
-#The PostGIS Documentation
+# The PostGIS Documentation
 [![img](images/st_within_docs.png)](http://postgis.net/docs/ST_Within.html)
 
-###They're actually really helpful
+### They're actually really helpful
 
 ---
 
-#Other Documentation
+# Other Documentation
 + [QGIS online manual](http://docs.qgis.org/2.8/en/docs/)
 + [QGIS Tutorials and Tips](http://www.qgistutorials.com/en/index.html)
 + [Free and Open Source GIS Ramblings](https://anitagraser.com/)
 
 ---
 
-#Get Projection from a .prj file
+# Get Projection from a .prj file
 [![img-center-80](images/prj2epsg.png)](http://prj2epsg.org/search)
 
 ---
@@ -1159,7 +1159,7 @@ class:middle
 
 ---
 
-#Reminders
+# Reminders
 --
 
 + Know your layer projection
