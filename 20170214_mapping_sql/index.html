@@ -27,6 +27,8 @@ class:center,middle
 ### Follow along at: http://bit.ly/govex-mapping-sql
 ### Code available at: http://bit.ly/govex-mapping-sql-code
 
+### [Day 2](#day2)
+
 ---
 
 # Goals
@@ -63,6 +65,7 @@ class:center,middle
 
 ---
 
+name:spatial_elements
 class:center,middle
 # Basic Spatial Elements
 
@@ -86,6 +89,7 @@ class:center,middle
 
 ---
 
+name:gis
 class:center,middle
 # So What is a GIS?
 
@@ -125,8 +129,10 @@ class:center,middle
 class:center,middle
 # Let's make a map
 ![img-center-80](images/p1_finished.png)
+
 ---
 
+name:basemap
 # Base Maps 
 --
 
@@ -184,6 +190,7 @@ class:center,middle
 
 ---
 
+name:shapefile
 # Shapefiles
 --
         
@@ -201,7 +208,7 @@ class:center,middle
 
 ---
 
-#Download a shapefile and import
+# Download a shapefile and import
 1. [Click this link](data/boros.zip) and download the file to your desktop
 2. Unzip the file
 
@@ -209,7 +216,7 @@ class:center,middle
 ![img-center-80](images/qgis_nav2.png)
 ---
 
-#Import a shapefile
+# Import a shapefile
 
 ![img-center-50](images/qgis_nav3_box.png)
 
@@ -217,49 +224,50 @@ class:center,middle
 
 ---
 
-#Import a shapefile
+# Import a shapefile
 ![img-center-80](images/p1_boro_shp.png)
 
 ---
-
+name:csv
 class:center,middle
-#Adding a CSV file
+# Adding a CSV file
 
 ---
 
-#What is a CSV?
+# What is a CSV?
 --
 
 ![img-center-100](images/csv_311_ex.png)
 
 ---
 
-#Import a CSV
+# Import a CSV
 + [Right click this link](data/dot_311_20160201_20160207.csv)
 + Select "Save link as" 
 + Save the file (`dot_311_20160201_20160207.csv`) to your desktop
 
 ---
 
-#Adding CSV Data
+# Adding CSV Data
 ![img-center-70](images/add_csv1.png)
 
 ![img-center-90](images/add_csv2_box_crop.png)
 
 ---
 
-#Adding CSV Data
+# Adding CSV Data
 ![img](images/p1_csv_box.png)
 
 ---
 
-#Adding CSV Data
+# Adding CSV Data
 ![img](images/add_csv5.png)
 
 ---
 
+name:projections
 class:center,middle
-#What is a Coordinate Reference System?
+# What is a Coordinate Reference System?
 
 ---
 
@@ -282,7 +290,7 @@ class:center,middle
 
 ---
 
-#Projections
+# Projections
 + Every projection distorts some part of your map
 
 ![img-center-50](images/projections-faces.png)
@@ -291,7 +299,7 @@ class:center,middle
 
 ---
 
-#Projections
+# Projections
 
 + For the most part we will work in **WGS 84** (latitude and longitude)
 --
@@ -299,7 +307,7 @@ class:center,middle
 + In NYC, we use a more accurate projection **NY State Plane/Long Island Zone**
 ![img-right-60](images/projections_NYSplane.png)
 
-######Source: https://alidade.wikispaces.com/New+York+SPCS+Zones
+###### Source: https://alidade.wikispaces.com/New+York+SPCS+Zones
 
 ---
 
@@ -327,18 +335,19 @@ class:center,middle
 
 ---
 
-#Adding CSV Data
+# Adding CSV Data
 ![img-center-55](images/add_csv6_box.png)
 
 ---
 
-#Adding CSV Data
+# Adding CSV Data
 ![img-center-80](images/p1_points_poly.png)
 
 ---
 
+name:styling
 class:center,middle
-#Styling the map
+# Styling the map
 
 ---
 
@@ -356,7 +365,7 @@ class:center,middle
 
 ---
 
-#Styling Features
+# Styling Features
 + Select the column that has the data you want to style:
     
 ![img-center-60](images/styling2.png)
@@ -365,12 +374,12 @@ class:center,middle
 
 ---
 
-#Styling Features
+# Styling Features
 ![img](images/styling4_box.png)
 
 ---
 
-#Styling Features
+# Styling Features
 ![img-center-80](images/p1_style.png)
 
 ---
@@ -391,7 +400,7 @@ class:middle,center
 
 ###Source: https://www.instagram.com/p/-0QkhTj82O/
 ---
-
+name:database
 class:center,middle
 #Spatial Databases
 
@@ -431,7 +440,7 @@ class:center,middle
 
 ---
 
-#What is a spatial database?
+# What is a spatial database?
 --
 
 + A database that stores spatial features
@@ -445,7 +454,7 @@ class:center,middle
 
 ![img](http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/_images/spatialmojo.png)
 
-####Source: http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/postgis/spatialdbs.html
+#### Source: http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/postgis/spatialdbs.html
 
 ---
 
@@ -486,7 +495,7 @@ class:center,middle
 
 ---
 
-# Exercise 1 - Selecting Injuries in a Borough
+# Exercise - Selecting Injuries in a Borough
 1. Add the `injuries` table to your map
 2. Right click and select "Filter..."
 ![img-right-40](images/filter_pg_layer1.png)
@@ -585,6 +594,42 @@ class:center,middle
 --
 
 + Need to know SQL to get the most out of it
+
+---
+
+name:day2
+
+class:center,middle
+# Day 2
+# Welcome Back
+
+---
+
+# What We Covered Yesterday
+--
+
++ [Basic Spatial Elements](#spatial_elements)
+--
+
++ [What is a GIS?](#gis)
+--
+
++ [Adding a Basemap](#basemap)
+--
+
++ [Adding Shapefiles](#shapefile)
+--
+
++ [Adding CSV data](#csv)
+--
+
++ [Projections](#projections)
+--
+
++ [Styling features](#styling)
+--
+
++ [Connecting to a database](#database)
 
 ---
 
@@ -1035,14 +1080,14 @@ GROUP BY polygons.unique_id
 
 ---
 
-class:center,middle
-# Resources for Working with Spatial Data
-
----
-
 # Finishing
 + Add the result to the table
 + Style the values (3 classes)
+
+---
+
+class:center,middle
+# Resources for Working with Spatial Data
 
 ---
 
@@ -1137,10 +1182,20 @@ class:middle
 ---
 
 # Things we didn't cover
+--
+
 + [Buffering](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#193)
+--
+
 + [Select by Location](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#229)
+--
+
 + [Heatmaps](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#380)
+--
+
 + [Geocoding](http://www.datapolitan.com/DOT_GIS/20160610_Intermediate_GIS/#403)
+--
+
 + [Print Composer](http://www.datapolitan.com/DOT_GIS/20160428_Introduction_to_GIS_Fundamentals/#246)
 
 ---
